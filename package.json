@@ -1,0 +1,36 @@
+{
+  "name": "hdir-vanilla-js",
+  "version": "1.0.0",
+  "description": "This project bundles and transpiles various javascript files into one",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.prod.js  --colors",
+    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+  },
+  "keywords": [
+    "webpack",
+    "frontend",
+    "babel",
+    "es6",
+    "javascript"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.4",
+    "eslint": "^5.7.0",
+    "eslint-loader": "^2.1.1",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "stickyfilljs": "^2.1.0"
+  }
+}
