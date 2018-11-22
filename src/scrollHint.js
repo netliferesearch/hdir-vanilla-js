@@ -7,7 +7,7 @@ function activeHeading(headings, navItems, scrollPos) {
   );
 
   if (prescrolledItems.length) {
-    // Finds the index of the first item of those we have not scrolled past yet
+    // Finds the last item we scrolled past
     toggleActiveNavClass(
       navItems,
       htmlHeadings.indexOf(prescrolledItems[prescrolledItems.length - 1])
