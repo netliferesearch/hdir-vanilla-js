@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/build
 
 # Runtime data
 pids
