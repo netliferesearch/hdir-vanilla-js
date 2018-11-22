@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
+import debounce from "lodash.debounce";
 import { activeHeading } from "./scrollHint";
 
 // Init stickyscroll polyfill
@@ -18,10 +19,11 @@ if (
   const headings = document.querySelectorAll(".t-body-text > h2");
   // Only add the event listener if the number of nav list items and h2 headings match.
   if (navItems.length === headings.length) {
-    window.addEventListener("scroll", () => {
-      const scrollPosition = window.pageYOffset;
-
-      activeHeading(headings, navItems, scrollPosition);
-    });
+    window.addEventListener(
+      "scroll",
+      debounce(() => {
+        activeHeading(headings, navItems, window.pageYOffset);
+      }, 16.66) // 16.66ms is 60fps
+    );
   }
 }
