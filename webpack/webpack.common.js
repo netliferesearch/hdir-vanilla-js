@@ -10,12 +10,6 @@ module.exports = {
     path: Path.join(__dirname, "../build"),
     filename: "hdir-vanilla.js"
   },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      name: false
-    }
-  },
   plugins: [
     new CleanWebpackPlugin(["build"], { root: Path.resolve(__dirname, "..") }),
     new CopyWebpackPlugin([

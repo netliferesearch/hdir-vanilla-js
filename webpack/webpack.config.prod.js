@@ -8,8 +8,7 @@ module.exports = merge(common, {
   stats: "errors-only",
   bail: true,
   output: {
-    filename: "hdir-vanilla.js",
-    chunkFilename: "hdir-vanilla.chunk.js"
+    filename: "hdir-vanilla.js"
   },
   plugins: [
     new Webpack.DefinePlugin({

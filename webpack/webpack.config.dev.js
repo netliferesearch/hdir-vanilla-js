@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "cheap-eval-source-map",
   output: {
-    chunkFilename: "hdir-vanilla.js"
+    filename: "hdir-vanilla.js"
   },
   devServer: {
     inline: true
