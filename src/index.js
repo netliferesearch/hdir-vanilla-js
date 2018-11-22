@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
 import { activeHeading } from "./scrollHint";
 
