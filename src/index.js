@@ -2,6 +2,7 @@ import "@babel/polyfill";
 import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
 import debounce from "lodash.debounce";
 import { activeHeading } from "./scrollHint";
+import { collapsible } from "./collapsible";
 
 // Init stickyscroll polyfill
 const elements = document.querySelectorAll(".b-nav-list--sticky");
@@ -27,3 +28,8 @@ if (
     );
   }
 }
+
+// Collapsible
+[...document.querySelectorAll(".b-collapsible__button")].forEach(item => {
+  item.addEventListener("click", collapsible, false);
+});
