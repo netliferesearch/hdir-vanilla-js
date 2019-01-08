@@ -4,6 +4,14 @@ function collapsible(e) {
   // Toggle expanded value
   e.currentTarget.setAttribute("aria-expanded", String(!expanded));
 
+  // Toggle active modifier class
+  const elemClasses = e.currentTarget.classList;
+  if (elemClasses.contains("b-collapsible__button--active")) {
+    elemClasses.remove("b-collapsible__button--active");
+  } else {
+    elemClasses.add("b-collapsible__button--active");
+  }
+
   const ariaControls = e.currentTarget.getAttribute("aria-controls");
   toggleContent(ariaControls, expanded);
 }
