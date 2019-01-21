@@ -1,9 +1,7 @@
 // This script is used on the search result page, in the sidebar.
 // It checks checkboxes and radio buttons, and makes a new request when they are changed.
 
-const searchParams = new URLSearchParams(window.location.search);
-
-function setParams(event) {
+function setParams(event, searchParams) {
   const targetName = event.target.getAttribute("name");
   const targetValue = event.target.value;
   const targetType = event.target.getAttribute("type");
@@ -54,10 +52,4 @@ function setInputValue(params) {
   });
 }
 
-setInputValue(searchParams);
-
-// Creates listeners for the input-elements in the sidebar.
-const searchQueryElements = document.querySelectorAll("#searchQueries input");
-searchQueryElements.forEach(element => {
-  element.addEventListener("change", setParams);
-});
+export { setParams, setInputValue };

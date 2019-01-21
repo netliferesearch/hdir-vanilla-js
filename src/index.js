@@ -3,6 +3,7 @@ import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
 import debounce from "lodash.debounce";
 import { activeHeading } from "./scrollHint";
 import { collapsible } from "./collapsible";
+import { setParams, setInputValue } from "./filterToggler";
 
 // Init stickyscroll polyfill
 const elements = document.querySelectorAll(".b-nav-list--sticky");
@@ -33,3 +34,15 @@ if (
 [...document.querySelectorAll(".b-collapsible__button")].forEach(item => {
   item.addEventListener("click", collapsible, false);
 });
+
+// Search filter params
+if (document.querySelector("#filterToggler")) {
+  const searchParams = new URLSearchParams(window.location.search);
+  setInputValue(searchParams);
+
+  // Creates listeners for the input-elements in the sidebar.
+  const searchQueryElements = document.querySelectorAll("#filterToggler input");
+  searchQueryElements.forEach(element => {
+    element.addEventListener("change", e => setParams(e, searchParams));
+  });
+}
