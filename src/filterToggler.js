@@ -52,4 +52,26 @@ function setInputValue(params) {
   });
 }
 
-export { setParams, setInputValue };
+// Resets all search/filter params
+function resetSearchParams(e, searchParams) {
+  const categories = [
+    ...new Set(
+      [...document.querySelectorAll("#searchQueries input")].map(x =>
+        x.getAttribute("name")
+      )
+    )
+  ];
+  categories.forEach(x => {
+    searchParams.delete(x);
+  });
+
+  const location = window.location.href.slice(
+    0,
+    window.location.href.indexOf("?")
+  );
+
+  const updatedUrlParams = new URL(`${location}?${searchParams.toString()}`);
+  window.location = updatedUrlParams.toString();
+}
+
+export { setParams, setInputValue, resetSearchParams };

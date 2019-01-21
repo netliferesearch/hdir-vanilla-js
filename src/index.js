@@ -3,7 +3,7 @@ import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
 import debounce from "lodash.debounce";
 import { activeHeading } from "./scrollHint";
 import { collapsible } from "./collapsible";
-import { setParams, setInputValue } from "./filterToggler";
+import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 
 // Init stickyscroll polyfill
 const elements = document.querySelectorAll(".b-nav-list--sticky");
@@ -46,3 +46,7 @@ if (document.querySelector("#filterToggler")) {
     element.addEventListener("change", e => setParams(e, searchParams));
   });
 }
+// Reset filter button
+document
+  .querySelector("#resetFilter")
+  .addEventListener("click", e => resetSearchParams(e, searchParams));
