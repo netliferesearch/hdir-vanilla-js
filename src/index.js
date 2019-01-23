@@ -59,4 +59,3 @@ const expandableLists = [...document.querySelectorAll(".js-expand-list")];
 expandableLists.forEach(list => {
   makeListExpandable(list);
 });
-console.log(expandableLists);
