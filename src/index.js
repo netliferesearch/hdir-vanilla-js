@@ -50,3 +50,9 @@ if (document.querySelector("#filterToggler")) {
 document
   .querySelector("#resetFilter")
   .addEventListener("click", e => resetSearchParams(e, searchParams));
+
+// Makes lists with the js-expand-list class name expandable
+const expandableLists = [...document.querySelectorAll(".js-expand-list")];
+expandableLists.forEach(list => {
+  makeListExpandable(list);
+});
