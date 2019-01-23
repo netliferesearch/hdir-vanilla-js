@@ -1,15 +1,18 @@
 function makeListExpandable(parent, max = 3) {
+  const startLimit = parent.getAttribute("data-start-limit")
+    ? Number(parent.getAttribute("data-start-limit"))
+    : max;
   // Hides elements after the max limit. Default = 3.
   parent.querySelectorAll("li").forEach((item, i) => {
-    if (i >= max) {
+    if (i >= startLimit) {
       item.hidden = true;
       // Adds a class for animation when it is no longer hidden.
       item.classList.add("js-expand-list__extra-item");
     }
   });
   // Makes the button clickable, the number of
-  // items are greater than max limit
-  if (parent.querySelectorAll("li").length > max) {
+  // items are greater than start limit
+  if (parent.querySelectorAll("li").length > startLimit) {
     parent.querySelector("button").addEventListener("click", e => {
       showAllItems(parent);
       e.preventDefault();
