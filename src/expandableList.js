@@ -19,18 +19,18 @@ function makeListExpandable(parent, max = 3) {
       e.currentTarget.hidden = true;
     });
   }
-  // Hide the button if we are hiding nothing
+  // Removes the button if we don't need it
   else {
-    parent.querySelector("button").hidden = true;
+    parent.querySelector("button").remove();
   }
 }
 
 function showAllItems(parent) {
-  // Makes all items in the list not hidden.
+  // Makes all items in the list not hiddenm and removes the button.
   parent.querySelectorAll("li").forEach(item => {
     item.hidden = false;
   });
-  parent.querySelector("button").hidden = true;
+  parent.querySelector("button").remove();
 }
 
 export { makeListExpandable };
