@@ -1,4 +1,5 @@
 import "@babel/polyfill";
+import "url-polyfill";
 import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
 import debounce from "lodash.debounce";
 import { activeHeading } from "./scrollHint";
@@ -42,7 +43,9 @@ if (document.querySelector("#filterToggler")) {
   setInputValue(searchParams);
 
   // Creates listeners for the input-elements in the sidebar.
-  const searchQueryElements = document.querySelectorAll("#filterToggler input");
+  const searchQueryElements = [
+    ...document.querySelectorAll("#filterToggler input")
+  ];
   searchQueryElements.forEach(element => {
     element.addEventListener("change", e => setParams(e, searchParams));
   });

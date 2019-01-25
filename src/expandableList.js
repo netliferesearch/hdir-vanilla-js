@@ -3,7 +3,7 @@ function makeListExpandable(parent, max = 3) {
     ? Number(parent.getAttribute("data-start-limit"))
     : max;
   // Hides elements after the max limit. Default = 3.
-  parent.querySelectorAll("li").forEach((item, i) => {
+  [...parent.querySelectorAll("li")].forEach((item, i) => {
     if (i >= startLimit) {
       item.hidden = true;
       // Adds a class for animation when it is no longer hidden.
@@ -21,16 +21,16 @@ function makeListExpandable(parent, max = 3) {
   }
   // Removes the button if we don't need it
   else {
-    parent.querySelector("button").remove();
+    parent.querySelector("button").hidden = true;
   }
 }
 
 function showAllItems(parent) {
   // Makes all items in the list not hiddenm and removes the button.
-  parent.querySelectorAll("li").forEach(item => {
+  [...parent.querySelectorAll("li")].forEach(item => {
     item.hidden = false;
   });
-  parent.querySelector("button").remove();
+  parent.querySelector("button").hidden = true;
 }
 
 export { makeListExpandable };
