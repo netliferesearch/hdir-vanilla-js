@@ -15,8 +15,10 @@ function collapsible(e) {
     elemClasses.add("b-collapsible__button--active");
   }
 
-  const ariaControls = element.getAttribute("aria-controls");
-  toggleContent(ariaControls, expanded);
+  const content = document.getElementById(
+    element.getAttribute("aria-controls")
+  );
+  toggleContent(content, expanded);
 }
 
 function findWrapper(child) {
@@ -29,8 +31,17 @@ function findWrapper(child) {
   }
 }
 
-function toggleContent(ariaControls, expanded) {
-  const content = document.getElementById(ariaControls);
+function collapseFromUrl() {
+  // Takes hash from URL, uses it as an ID selector and runs the expand function.
+  if (window.location.hash) {
+    const element = document.getElementById(
+      window.location.hash.slice(1, window.location.hash.length)
+    );
+    toggleContent(element);
+  }
+}
+
+function toggleContent(content, expanded) {
   expanded
     ? content.setAttribute("hidden", "")
     : content.removeAttribute("hidden");
@@ -40,4 +51,4 @@ function toggleContent(ariaControls, expanded) {
   zenscroll.intoView(findWrapper(content), 300);
 }
 
-export { collapsible };
+export { collapsible, collapseFromUrl };

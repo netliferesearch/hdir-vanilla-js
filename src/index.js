@@ -3,7 +3,7 @@ import "url-polyfill";
 import Stickyfill from "../node_modules/stickyfilljs/dist/stickyfill";
 import debounce from "lodash.debounce";
 import { activeHeading } from "./scrollHint";
-import { collapsible } from "./collapsible";
+import { collapsible, collapseFromUrl } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
 
@@ -62,3 +62,8 @@ const expandableLists = [...document.querySelectorAll(".js-expand-list")];
 expandableLists.forEach(list => {
   makeListExpandable(list);
 });
+
+// Looks at the url hash and collapse the collapsable with a match
+if (expandableLists) {
+  collapseFromUrl();
+}
