@@ -14,9 +14,23 @@ function makeListExpandable(parent, max = 3) {
   // items are greater than start limit
   if (parent.querySelectorAll("li").length > startLimit) {
     parent.querySelector("button").addEventListener("click", e => {
-      showAllItems(parent);
-      e.preventDefault();
-      e.currentTarget.hidden = true;
+      if (e.currentTarget.getAttribute("data-expanded")) {
+        e.preventDefault();
+        e.currentTarget.removeAttribute("data-expanded");
+        e.currentTarget.innerText = e.currentTarget.getAttribute(
+          "data-expand-text"
+        );
+        hideExpandedItems(parent, max);
+      } else {
+        showAllItems(parent);
+        e.preventDefault();
+        e.currentTarget.setAttribute("data-expanded", "true");
+        e.currentTarget.setAttribute(
+          "data-expand-text",
+          e.currentTarget.innerText
+        );
+        e.currentTarget.innerText = "Vis færre";
+      }
     });
   }
   // Removes the button if we don't need it
@@ -30,7 +44,18 @@ function showAllItems(parent) {
   [...parent.querySelectorAll("li")].forEach(item => {
     item.hidden = false;
   });
-  parent.querySelector("button").hidden = true;
+}
+
+function hideExpandedItems(parent, max = 3) {
+  const startLimit = parent.getAttribute("data-start-limit")
+    ? Number(parent.getAttribute("data-start-limit"))
+    : max;
+
+  [...parent.querySelectorAll("li")].forEach((item, index) => {
+    if (index > startLimit - 1) {
+      item.hidden = true;
+    }
+  });
 }
 
 export { makeListExpandable };
