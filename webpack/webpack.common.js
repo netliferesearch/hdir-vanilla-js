@@ -13,7 +13,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["build"], { root: Path.resolve(__dirname, "..") }),
     new CopyWebpackPlugin([
-      { from: "./public", to: "public" },
       { from: "index.html", to: "index.html", toType: "file" },
       { from: "App.css", to: "App.css", toType: "file" }
     ])
