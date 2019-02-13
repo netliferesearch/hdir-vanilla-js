@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This project bundles and transpiles various javascript files into one",
   "scripts": {
-    "build": "npx run webpack --config webpack/webpack.config.prod.js  --colors",
+    "build": "npx webpack --config webpack/webpack.config.prod.js  --colors",
     "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
   },
   "keywords": [
