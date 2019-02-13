@@ -5,9 +5,17 @@ import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
 
 // Collapsible
-[...document.querySelectorAll(".b-collapsible__button")].forEach(item => {
+const collapsableElements = [
+  ...document.querySelectorAll(".b-collapsible__button")
+];
+collapsableElements.forEach(item => {
   item.addEventListener("click", collapsible, false);
 });
+
+// Looks at the url hash and collapse the collapsable with a match
+if (collapsableElements.length) {
+  collapseFromUrl();
+}
 
 // Search filter params
 if (document.querySelector("#filterToggler")) {
@@ -34,8 +42,3 @@ const expandableLists = [...document.querySelectorAll(".js-expand-list")];
 expandableLists.forEach(list => {
   makeListExpandable(list);
 });
-
-// Looks at the url hash and collapse the collapsable with a match
-if (expandableLists) {
-  collapseFromUrl();
-}

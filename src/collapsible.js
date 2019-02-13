@@ -34,19 +34,22 @@ function findWrapper(child) {
 function collapseFromUrl() {
   // Takes hash from URL, uses it as an ID selector and runs the expand function.
   if (window.location.hash) {
-    const element = document.getElementById(
-      window.location.hash.slice(1, window.location.hash.length)
-    );
+    const id = window.location.hash.slice(1, window.location.hash.length);
+    const element = document.getElementById(id);
+    const button = document.querySelector(`button[aria-controls=${id}]`);
     toggleContent(element);
+    button.setAttribute("aria-expanded", "true");
   }
 }
 
 function toggleContent(content, expanded) {
-  expanded
-    ? content.setAttribute("hidden", "")
-    : content.removeAttribute("hidden");
-
-  content.setAttribute("aria-hidden", String(expanded));
+  if (expanded) {
+    content.setAttribute("hidden", "");
+    content.setAttribute("aria-hidden", "");
+  } else {
+    content.removeAttribute("hidden");
+    content.removeAttribute("aria-hidden", "");
+  }
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
   zenscroll.intoView(findWrapper(content), 300);
 }
