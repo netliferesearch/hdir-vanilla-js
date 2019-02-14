@@ -32,6 +32,9 @@ function setParams(event, searchParams) {
     });
   }
 
+  // We want to go to the first page if we change the search queries
+  searchParams.delete("page");
+
   const location = window.location.href.slice(
     0,
     window.location.href.indexOf("?")
@@ -63,6 +66,8 @@ function resetSearchParams(e, searchParams) {
   ];
   categories.forEach(x => {
     searchParams.delete(x);
+    // We want to go to the first page if we empty the search queries
+    searchParams.delete("page");
   });
 
   const location = window.location.href.slice(
