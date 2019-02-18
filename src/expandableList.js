@@ -29,13 +29,14 @@ function makeListExpandable(parent, max = 3) {
           "data-expand-text",
           e.currentTarget.innerText
         );
-        e.currentTarget.innerText = "Vis færre";
+        e.currentTarget.innerText = "↑ Vis færre";
       }
     });
   }
   // Removes the button if we don't need it
   else {
-    parent.querySelector("button").hidden = true;
+    console.log("remove me", parent.querySelector("button").hidden);
+    parent.querySelector("button").remove();
   }
 }
 
