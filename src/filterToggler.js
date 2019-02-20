@@ -59,7 +59,7 @@ function setInputValue(params) {
 function resetSearchParams(e, searchParams) {
   const categories = [
     ...new Set(
-      [...document.querySelectorAll("#searchQueries input")].map(x =>
+      [...document.querySelectorAll("#filterToggler input")].map(x =>
         x.getAttribute("name")
       )
     )

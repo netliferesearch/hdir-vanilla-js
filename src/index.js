@@ -17,9 +17,9 @@ if (collapsableElements.length) {
   collapseFromUrl();
 }
 
+const searchParams = new URLSearchParams(window.location.search);
 // Search filter params
 if (document.querySelector("#filterToggler")) {
-  const searchParams = new URLSearchParams(window.location.search);
   setInputValue(searchParams);
 
   // Creates listeners for the input-elements in the sidebar.
@@ -32,9 +32,9 @@ if (document.querySelector("#filterToggler")) {
 }
 // Reset filter button
 if (document.querySelector("#resetFilter")) {
-  document
-    .querySelector("#resetFilter")
-    .addEventListener("click", e => resetSearchParams(e, searchParams));
+  document.querySelector("#resetFilter").addEventListener("click", e => {
+    resetSearchParams(e, searchParams);
+  });
 }
 
 // Makes lists with the js-expand-list class name expandable
