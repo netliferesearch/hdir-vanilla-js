@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import "url-polyfill";
+import "./polyfillRemove";
 import { collapsible, collapseFromUrl } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
