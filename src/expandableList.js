@@ -35,7 +35,7 @@ function makeListExpandable(parent, max = 3) {
   }
   // Removes the button if we don't need it
   else {
-    parent.querySelector("button").remove();
+    parent.querySelector("button") && parent.querySelector("button").remove();
   }
 }
 
