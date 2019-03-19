@@ -13,12 +13,26 @@ function makeListExpandable(parent, max = 3) {
   // Makes the button clickable, the number of
   // items are greater than start limit
   if (parent.querySelectorAll("li").length > startLimit) {
+    parent
+      .querySelector("button")
+      .setAttribute(
+        "aria-label",
+        `${parent.querySelector("button").innerText} ${parent
+          .querySelector("button")
+          .getAttribute("data-type-name") || ""}`
+      );
     parent.querySelector("button").addEventListener("click", e => {
       if (e.currentTarget.getAttribute("data-expanded")) {
         e.preventDefault();
         e.currentTarget.removeAttribute("data-expanded");
         e.currentTarget.innerText = e.currentTarget.getAttribute(
           "data-expand-text"
+        );
+        e.currentTarget.setAttribute(
+          "aria-label",
+          `${parent.querySelector("button").innerText} ${parent
+            .querySelector("button")
+            .getAttribute("data-type-name") || ""}`
         );
         hideExpandedItems(parent, max);
       } else {
@@ -30,6 +44,12 @@ function makeListExpandable(parent, max = 3) {
           e.currentTarget.innerText
         );
         e.currentTarget.innerText = "↑ Vis færre";
+        e.currentTarget.setAttribute(
+          "aria-label",
+          `${parent.querySelector("button").innerText} ${parent
+            .querySelector("button")
+            .getAttribute("data-type-name") || ""}`
+        );
       }
     });
   }
