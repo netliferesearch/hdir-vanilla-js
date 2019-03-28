@@ -37,8 +37,11 @@ function setParams(event, searchParams) {
 
   const location = window.location.href.slice(
     0,
-    window.location.href.indexOf("?")
+    window.location.href.indexOf("?") === -1
+      ? 0
+      : window.location.href.indexOf("?")
   );
+
   // Adds queries to a URL object, then it goes to the new URL
   const updatedUrlParams = new URL(`${location}?${searchParams.toString()}`);
   window.location = updatedUrlParams.toString();
@@ -72,7 +75,9 @@ function resetSearchParams(e, searchParams) {
 
   const location = window.location.href.slice(
     0,
-    window.location.href.indexOf("?")
+    window.location.href.indexOf("?") === -1
+      ? 0
+      : window.location.href.indexOf("?")
   );
 
   const updatedUrlParams = new URL(`${location}?${searchParams.toString()}`);
