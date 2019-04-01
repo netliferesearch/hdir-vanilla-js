@@ -38,7 +38,7 @@ function setParams(event, searchParams) {
   const location = window.location.href.slice(
     0,
     window.location.href.indexOf("?") === -1
-      ? 0
+      ? window.location.href.length
       : window.location.href.indexOf("?")
   );
 
@@ -76,7 +76,7 @@ function resetSearchParams(e, searchParams) {
   const location = window.location.href.slice(
     0,
     window.location.href.indexOf("?") === -1
-      ? 0
+      ? window.location.href.length
       : window.location.href.indexOf("?")
   );
 
