@@ -11,10 +11,3 @@ Hvis du skal endre koden; så bruk en editor som støtter prettier og eslint, hv
 Kjør `npm run start` for utvikling.
 
 Kjør `npm run build` for bygging.
-
-### Scripts i prosjektet:
-
-- Babel polyfill - Polyfills for moderne javascript som ikke kan transpileres
-- Stickyfill - En polyfill for `position: sticky`
-- Lodash debounce - Brukes til forhindre at scroll eventen får spamme funksjonskall.
-- Egenutviklet: Scroll hint - Viser hvilken seksjon man har scrollet til
