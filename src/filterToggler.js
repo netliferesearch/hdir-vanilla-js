@@ -1,3 +1,5 @@
+import resolveLocation from '../utils/resolveLocationUtil';
+
 // This script is used on the search result page, in the sidebar.
 // It checks checkboxes and radio buttons, and makes a new request when they are changed.
 
@@ -35,12 +37,7 @@ function setParams(event, searchParams) {
   // We want to go to the first page if we change the search queries
   searchParams.delete("page");
 
-  const location = window.location.href.slice(
-    0,
-    window.location.href.indexOf("?") === -1
-      ? window.location.href.length
-      : window.location.href.indexOf("?")
-  );
+  const location = resolveLocation(window.location.href);
 
   // Adds queries to a URL object, then it goes to the new URL
   const updatedUrlParams = new URL(`${location}?${searchParams.toString()}`);
@@ -73,12 +70,7 @@ function resetSearchParams(e, searchParams) {
     searchParams.delete("page");
   });
 
-  const location = window.location.href.slice(
-    0,
-    window.location.href.indexOf("?") === -1
-      ? window.location.href.length
-      : window.location.href.indexOf("?")
-  );
+  const location = resolveLocation(window.location.href);
 
   const updatedUrlParams = new URL(`${location}?${searchParams.toString()}`);
   window.location = updatedUrlParams.toString();
