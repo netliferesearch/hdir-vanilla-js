@@ -4,6 +4,10 @@ import "./polyfillRemove";
 import { collapsible, collapseFromUrl } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
+import scrollToTitleFromUrlHash from "../utils/scrollToTitleFromUrlHashUtil";
+
+// Initiate logic for scrolling to header/section based on hash in url
+scrollToTitleFromUrlHash();
 
 // Collapsible
 const collapsableElements = [
