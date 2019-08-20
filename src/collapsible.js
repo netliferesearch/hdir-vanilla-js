@@ -2,7 +2,7 @@ import zenscroll from "zenscroll";
 
 function hideElement(el) {
   el.setAttribute("hidden", "");
-  el.setAttribute("aria-hidden", "");
+  el.setAttribute("aria-hidden", "true"); 
   el.style.display = "none";
 }
 
