@@ -2,13 +2,13 @@ import zenscroll from "zenscroll";
 
 function hideElement(el) {
   el.setAttribute("hidden", "");
-  el.setAttribute("aria-hidden", "true"); 
+  el.setAttribute("aria-hidden", "true");
   el.style.display = "none";
 }
 
 function showElement(el) {
   el.removeAttribute("hidden");
-  el.removeAttribute("aria-hidden", "");
+  el.removeAttribute("aria-hidden");
   el.style.display = "block";
 }
 
@@ -72,10 +72,10 @@ function collapseFromUrl() {
 function toggleContent(content, expanded) {
   if (expanded) {
     content.setAttribute("hidden", "");
-    content.setAttribute("aria-hidden", "");
+    content.setAttribute("aria-hidden", "true");
   } else {
     content.removeAttribute("hidden");
-    content.removeAttribute("aria-hidden", "");
+    content.removeAttribute("aria-hidden");
   }
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
   zenscroll.intoView(findWrapper(content), 300);
