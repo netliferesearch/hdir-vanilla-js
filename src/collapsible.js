@@ -34,17 +34,21 @@ function collapsible(e) {
 
   // --- Subheading handling ---
 
+  // "Show me your parents and I will tell who you are" – some wise fellow
+  const theParent = element.parentElement;
   // The subheading element that renders as a 'p' tag, non-clickable
-  const subheadingEl = element.querySelectorAll("b-collapsible__meta-heading")[0];
+  const subheadingEl = theParent.querySelectorAll(".b-collapsible__meta-heading")[0];
   // The subheading element that renders as a 'div', containing the nested collapsible markup
-  const subheadingElCollapsible = element.querySelectorAll(".b-collapsible__subheading-collapsible")[0];
+  const subheadingElCollapsible = theParent.querySelectorAll(".b-collapsible__subheading-collapsible")[0];
 
-  if (expanded) {
-    hideElement(subheadingEl);
-    showElement(subheadingElCollapsible);
-  } else {
-    hideElement(subheadingElCollapsible);
-    showElement(subheadingEl);
+  if (subheadingEl && subheadingElCollapsible) {
+    if (expanded) {
+      hideElement(subheadingElCollapsible);
+      showElement(subheadingEl);
+    } else {
+      hideElement(subheadingEl);
+      showElement(subheadingElCollapsible);
+    }
   }
 }
 
