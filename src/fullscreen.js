@@ -14,6 +14,7 @@ const requestFullscreen = function (ele) {
 };
 
 const exitFullscreen = function (ele) {
+  console.log('trying to close');
   ele.classList.remove('videoWrapper__fullscreen');
   // Check if fullscreen is actually activated (if user pressed ESC, it may not be)
   if (!document.fullscreenElement && 

@@ -55,6 +55,21 @@ triggerFullscreen.forEach(item => {
   item.addEventListener("click", e => requestFullscreen(target));
 });
 
+// Trigger exit on esc press
+document.addEventListener('mozfullscreenchange', () => toggleFullscreen(triggerFullscreen[0]));
+document.addEventListener('webkitfullscreenchange', () => toggleFullscreen(triggerFullscreen[0]));
+document.addEventListener('fullscreenchange', () => toggleFullscreen(triggerFullscreen[0]));
+document.addEventListener('MSFullscreenChange', () => toggleFullscreen(triggerFullscreen[0]));
+const toggleFullscreen = (item) => {
+  if (!document.fullscreenElement && 
+    	!document.webkitFullscreenElement && 
+    	!document.mozFullScreenElement) {
+        const target = document.getElementById(item.dataset.target);
+        console.log('triggerFullscreen', triggerFullscreen);
+        exitFullscreen(target);
+  }
+};
+
 // Adds close btn for fullscreen iframe
 const closeFullscreen = [
   ...document.querySelectorAll("button[data-id='iframe-close']")
