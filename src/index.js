@@ -4,6 +4,7 @@ import "./polyfillRemove";
 import { collapsible, collapseFromUrl } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
+import { requestFullscreen, exitFullscreen } from "./fullscreen";
 
 // Collapsible
 const collapsableElements = [
@@ -42,4 +43,23 @@ if (document.querySelector("#resetFilter")) {
 const expandableLists = [...document.querySelectorAll(".js-expand-list")];
 expandableLists.forEach(list => {
   makeListExpandable(list);
+});
+
+
+// Adds trigger for fullscreen iframe
+const triggerFullscreen = [
+  ...document.querySelectorAll("button[data-id='iframe-open']")
+];
+triggerFullscreen.forEach(item => {
+  const target = document.getElementById(item.dataset.target);
+  item.addEventListener("click", e => requestFullscreen(target));
+});
+
+// Adds close btn for fullscreen iframe
+const closeFullscreen = [
+  ...document.querySelectorAll("button[data-id='iframe-close']")
+];
+closeFullscreen.forEach(item => {
+  const target = document.getElementById(item.dataset.target);
+  item.addEventListener("click", e => exitFullscreen(target));
 });
