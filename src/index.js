@@ -65,7 +65,6 @@ const toggleFullscreen = (item) => {
     	!document.webkitFullscreenElement && 
     	!document.mozFullScreenElement) {
         const target = document.getElementById(item.dataset.target);
-        console.log('triggerFullscreen', triggerFullscreen);
         exitFullscreen(target);
   }
 };
