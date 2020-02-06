@@ -40,6 +40,13 @@ function collapsible(e) {
   const subheadingEl = theParent.querySelectorAll(".b-collapsible__meta-heading")[0];
   // The subheading element that renders as a 'div', containing the nested collapsible markup
   const subheadingElCollapsible = theParent.querySelectorAll(".b-collapsible__subheading-collapsible")[0];
+  
+  // We want to add active state to the parent as well 
+  if (theParent.classList.contains("b-collapsible--active")) {
+    theParent.classList.remove("b-collapsible--active");
+  } else {
+    theParent.classList.add("b-collapsible--active");
+  }
 
   if (subheadingEl && subheadingElCollapsible) {
     if (expanded) {
