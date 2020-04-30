@@ -87,4 +87,5 @@ productSearchTrigger.addEventListener("click", toggleProductSearch);
 function toggleProductSearch () {
   console.log('toggle');
   document.getElementById('product-search').classList.toggle('hidden');
+  document.getElementById('product-search-input').focus();
 };
