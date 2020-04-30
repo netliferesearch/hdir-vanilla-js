@@ -6,19 +6,52 @@
     <title>Vanilla JS</title>
     <script src="./hdir-vanilla.js" defer></script>
     <link rel="stylesheet" href="App.css" />
+    <style>
+
+        .b-product-search.hidden {
+          display: none;
+        }
+    </style>
   </head>
   <body>
     <div className="l-mt-3">
-          <div className="l-mb-2">
-            <button secondary data-id="iframe-open" data-target="iframe">Fullskjerm</button>
-          </div>
-          <div class="videoWrapper videoWrapper__iframe" id="iframe">
-            <div class="videoWrapper__close">
-              <button secondary data-id="iframe-close" data-target="iframe">Lukk</button>
+        <div class="b-product-search"><button id="product-search-trigger" class="b-button b-button--clean"><span
+              class="b-link__icon" role="presentation" style="background: url(&quot;../icons/search.svg&quot;);"></span><span
+              class="b-button__underline">Søk i retningslinjen</span></button>
+          <div id="product-search" class="b-product-search hidden">
+            <div aria-hidden="true">
+              <div role="combobox" aria-haspopup="listbox" aria-owns="react-autowhatever-1" aria-expanded="false"
+                class="react-autosuggest__container">
+                <div class="b-input-search"><label id="search-input-label" for="b144718f-c2c2-4bab-9adb-48c7dc673f57"
+                    class="b-input-search__label">Søk i retningslinjen</label>
+                  <div class="b-input-search__inputs">
+                    <div class="b-input-search__placeholder" aria-hidden="true"></div><input title="Søk"
+                      aria-labelledby="search-input-label" id="b144718f-c2c2-4bab-9adb-48c7dc673f57" type="text"
+                      autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1"
+                      class="b-input-search__field" role="search" value=""><button class="b-input-search__button" type="button"
+                      aria-hidden="true"></button>
+                  </div>
+                </div>
+                <div id="react-autowhatever-1" role="listbox" class="react-autosuggest__suggestions-container"></div>
+              </div>
             </div>
-            <iframe title="Title here" width="100%" height="600" src="https://statistikk.helsedirektoratet.no/bi/Dashboard/71613538-62de-4ab2-8409-8638fc6c25db?e=false&vo=viewonly" frameBorder="0" allowFullScreen=""></iframe>
+            <form><label for="side-søk" class="visually-hidden" tabindex="-1">Søk på siden</label><input type="search"
+                id="side-søk" tabindex="-1" class="visually-hidden" value=""><button type="submit" class="visually-hidden"
+                tabindex="-1">Søk</button></form>
           </div>
         </div>
+    </div>
+    <!-- <div className="l-mt-3">
+      <div className="l-mb-2">
+        <button secondary data-id="iframe-open" data-target="iframe">Fullskjerm</button>
+      </div>
+      <div class="videoWrapper videoWrapper__iframe" id="iframe">
+        <div class="videoWrapper__close">
+          <button secondary data-id="iframe-close" data-target="iframe">Lukk</button>
+        </div>
+        <iframe title="Title here" width="100%" height="600" src="https://statistikk.helsedirektoratet.no/bi/Dashboard/71613538-62de-4ab2-8409-8638fc6c25db?e=false&vo=viewonly" frameBorder="0" allowFullScreen=""></iframe>
+      </div>
+    </div> -->
     <aside id="filterToggler">
       <form>
         <label

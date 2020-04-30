@@ -77,3 +77,14 @@ closeFullscreen.forEach(item => {
   const target = document.getElementById(item.dataset.target);
   item.addEventListener("click", e => exitFullscreen(target));
 });
+
+
+// Product search
+
+const productSearchTrigger = document.getElementById('product-search-trigger');
+productSearchTrigger.addEventListener("click", toggleProductSearch);
+
+function toggleProductSearch () {
+  console.log('toggle');
+  document.getElementById('product-search').classList.toggle('hidden');
+};
