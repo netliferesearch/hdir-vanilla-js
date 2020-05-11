@@ -79,13 +79,14 @@ closeFullscreen.forEach(item => {
 });
 
 
-// Product search
+// Profession picker
+const professionPicker = document.getElementById('profession-picker');
+professionPicker.addEventListener("click", e => toggleProfessionPicker());
 
-const productSearchTrigger = document.getElementById('product-search-trigger');
-productSearchTrigger.addEventListener("click", toggleProductSearch);
-
-function toggleProductSearch () {
-  console.log('toggle');
-  document.getElementById('product-search').classList.toggle('hidden');
-  document.getElementById('product-search-input').focus();
+const toggleProfessionPicker = () => {
+  console.log('toggling');
+  const picker = document.getElementById('profession-picker__content');
+  if (picker) {
+    picker.classList.toggle('hide');
+  }
 };
