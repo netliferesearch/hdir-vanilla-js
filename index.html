@@ -11,6 +11,17 @@
     </style>
   </head>
   <body>
+    <div class="b-profession-picker">
+      <label htmlFor="profession-selector" class="b-profession-picker__label">Innhold tilpasset til: <strong>Lege
+        </strong><button class="b-button--clean b-profession-picker__button"
+          id="profession-picker">Endre</button></label>
+      <div class="b-select l-mt-1 l-mb-3 col-md-6 hide" id="profession-picker__content">
+        <select id="profession-selector" class="b-select__select">
+          <option disabled="" class="b-select__option">Lege</option>
+          <option class="b-select__option">Lege</option>
+        </select>
+      </div>
+    </div>
     <aside id="filterToggler">
       <form>
         <label

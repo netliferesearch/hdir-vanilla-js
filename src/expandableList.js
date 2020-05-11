@@ -13,6 +13,9 @@ function makeListExpandable(parent, max = 3) {
   // Makes the button clickable, the number of
   // items are greater than start limit
   if (parent.querySelectorAll("li").length > startLimit) {
+    if (!parent.querySelector("button")) {
+      return;
+    }
     parent
       .querySelector("button")
       .setAttribute(
