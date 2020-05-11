@@ -81,7 +81,9 @@ closeFullscreen.forEach(item => {
 
 // Profession picker
 const professionPicker = document.getElementById('profession-picker');
-professionPicker.addEventListener("click", e => toggleProfessionPicker());
+if (professionPicker) {
+  professionPicker.addEventListener("click", e => toggleProfessionPicker());
+}
 
 const toggleProfessionPicker = () => {
   console.log('toggling');
