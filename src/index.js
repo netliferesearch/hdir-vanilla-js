@@ -86,7 +86,6 @@ if (professionPicker) {
 }
 
 const toggleProfessionPicker = () => {
-  console.log('toggling');
   const picker = document.getElementById('profession-picker__content');
   if (picker) {
     picker.classList.toggle('hide');
