@@ -13,29 +13,37 @@ function showElement(el) {
 }
 
 function collapsible(e) {
+  let theParent = null;
   const element = e.currentTarget;
-  const expanded =
-    element.getAttribute("aria-expanded") === "true" ? true : false;
-  // Toggle expanded value
-  element.setAttribute("aria-expanded", String(!expanded));
-
-  // Toggle active collapsible class on 'collapsible' button
-  const elemClasses = element.classList;
-  if (elemClasses.contains("b-collapsible__button--active")) {
-    elemClasses.remove("b-collapsible__button--active");
-  } else {
-    elemClasses.add("b-collapsible__button--active");
-  }
-
-  const content = document.getElementById(
-    element.getAttribute("aria-controls")
-  );
-  toggleContent(content, expanded);
-
+  const targetID = element.getAttribute("aria-controls");
+  const targetElement = document.getElementById(targetID);
+  
   // --- Subheading handling ---
 
   // "Show me your parents and I will tell who you are" – some wise fellow
-  const theParent = element.parentElement;
+  theParent = element.parentElement;
+
+  // If footer button was clicked, we have a different parent
+  if (theParent.classList.contains("b-collapsible__footer")) {
+    theParent = element.parentElement.parentElement.parentElement;
+  }
+
+  // Toggle active collapsible class on 'collapsible' button
+  const allButtons = theParent.querySelectorAll(`.b-collapsible__button[aria-controls*="${targetID}"]`);
+  allButtons.forEach(button => {
+    const expanded =
+      button.getAttribute("aria-expanded") === "true" ? true : false;
+    // Toggle expanded value
+    button.setAttribute("aria-expanded", String(!expanded));
+    const elemClasses = button.classList;
+    if (elemClasses.contains("b-collapsible__button--active")) {
+      elemClasses.remove("b-collapsible__button--active");
+    } else {
+      elemClasses.add("b-collapsible__button--active");
+    }
+    toggleContent(targetElement, expanded);
+  });
+
   // The subheading element that renders as a 'p' tag, non-clickable
   const subheadingEl = theParent.querySelectorAll(".b-collapsible__meta-heading")[0];
   // The subheading element that renders as a 'div', containing the nested collapsible markup
