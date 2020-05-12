@@ -87,7 +87,21 @@ if (professionPicker) {
 
 const toggleProfessionPicker = () => {
   const picker = document.getElementById('profession-picker__content');
-  if (picker) {
-    picker.classList.toggle('hide');
+  const selector = document.getElementById('profession-selector');
+  if (!picker || !selector) {
+    return;
+  }
+  picker.classList.toggle('hide');
+  if (picker.classList.contains('hide')) {
+    selector.setAttribute("aria-hidden", "true");
+  }
+  if (!picker.classList.contains('hide')) {
+    selector.removeAttribute("aria-hidden");
+  }
+  if (picker.classList.contains('hide')) {
+    picker.setAttribute("hidden", "");
+  }
+  if (!picker.classList.contains('hide')) {
+    picker.removeAttribute("hidden");
   }
 };
