@@ -54,6 +54,7 @@ function collapsible(e) {
     theParent.classList.remove("b-collapsible--active");
   } else {
     theParent.classList.add("b-collapsible--active");
+    window.location.hash = targetID;
   }
 
   if (subheadingEl && subheadingElCollapsible) {
