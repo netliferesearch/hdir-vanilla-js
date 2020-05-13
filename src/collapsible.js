@@ -55,10 +55,10 @@ function collapsible(e) {
   } else {
     theParent.classList.add("b-collapsible--active");
     if (history.pushState) {
-      history.pushState(null, null, targetID);
+      history.pushState(null, null, `#${targetID}`);
     }
     else {
-      location.hash = targetID;
+      location.hash = `#${targetID}`;
     }
   }
 
@@ -95,6 +95,9 @@ function collapseFromUrl() {
 }
 
 function toggleContent(content, expanded) {
+  if (!content) {
+    return;
+  }
   if (expanded) {
     content.setAttribute("hidden", "");
     content.setAttribute("aria-hidden", "true");
