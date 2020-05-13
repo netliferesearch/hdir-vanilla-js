@@ -88,9 +88,11 @@ function collapseFromUrl() {
   if (window.location.hash) {
     const id = window.location.hash.slice(1, window.location.hash.length);
     const element = document.getElementById(id);
-    const button = document.querySelector(`button[aria-controls=${id}]`);
     toggleContent(element);
-    button.setAttribute("aria-expanded", "true");
+    const allButtons = document.querySelectorAll(`.b-collapsible__button[aria-controls*="${id}"]`);
+    allButtons.forEach(button => {
+      button.setAttribute("aria-expanded", "true");
+    });
   }
 }
 
