@@ -29,7 +29,7 @@ function collapsible(e) {
   }
 
   // Toggle active collapsible class on 'collapsible' button
-  const allButtons = theParent.querySelectorAll(`.b-collapsible__button[aria-controls*="${targetID}"]`);
+  const allButtons = theParent.querySelectorAll(`.b-collapsible__button[aria-controls="${targetID}"]`);
   allButtons.forEach(button => {
     const expanded =
       button.getAttribute("aria-expanded") === "true" ? true : false;
@@ -83,19 +83,6 @@ function findWrapper(child) {
   }
 }
 
-function collapseFromUrl() {
-  // Takes hash from URL, uses it as an ID selector and runs the expand function.
-  if (window.location.hash) {
-    const id = window.location.hash.slice(1, window.location.hash.length);
-    const element = document.getElementById(id);
-    toggleContent(element);
-    const allButtons = document.querySelectorAll(`.b-collapsible__button[aria-controls*="${id}"]`);
-    allButtons.forEach(button => {
-      button.setAttribute("aria-expanded", "true");
-    });
-  }
-}
-
 function toggleContent(content, expanded) {
   if (!content) {
     return;
@@ -111,4 +98,4 @@ function toggleContent(content, expanded) {
   zenscroll.intoView(findWrapper(content), 300);
 }
 
-export { collapsible, collapseFromUrl };
+export { collapsible };

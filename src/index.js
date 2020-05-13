@@ -1,10 +1,11 @@
 import "@babel/polyfill";
 import "url-polyfill";
 import "./polyfillRemove";
-import { collapsible, collapseFromUrl } from "./collapsible";
+import { collapsible } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
 import { requestFullscreen, exitFullscreen } from "./fullscreen";
+import scrollToTitleFromUrlHash from './scrollToTitleFromUrlHash.js';
 
 // Collapsible
 const collapsableElements = [
@@ -16,7 +17,8 @@ collapsableElements.forEach(item => {
 
 // Looks at the url hash and collapse the collapsable with a match
 if (collapsableElements.length) {
-  collapseFromUrl();
+  // collapseFromUrl();
+  scrollToTitleFromUrlHash();
 }
 
 const searchParams = new URLSearchParams(window.location.search);
