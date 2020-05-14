@@ -18,7 +18,9 @@ collapsableElements.forEach(item => {
 // Looks at the url hash and collapse the collapsable with a match
 if (collapsableElements.length) {
   // collapseFromUrl();
-  scrollToTitleFromUrlHash();
+  setTimeout(function() {
+    scrollToTitleFromUrlHash();
+  }, 50);
 }
 
 const searchParams = new URLSearchParams(window.location.search);

@@ -32,8 +32,12 @@ const traverseCollapsibles = (el) => {
   let elements = [];
   while (el = el.parentElement) { // go up till <html>
     if (el.classList.contains('b-collapsible')) {
-      const collapsibleButton = el.querySelector('button');
-      elements.push(collapsibleButton);
+      const collapsibleButton = el.querySelectorAll(`button[aria-controls]`)[0];
+
+      // Skip already opened elements (behandling)
+      if (!collapsibleButton.classList.contains('b-collapsible__button--active')) {
+        elements.push(collapsibleButton);
+      }
     }
   }
   return elements;
@@ -59,8 +63,8 @@ const handleTarget = (el) => {
   // Traverse and open collapsibles
   // We first reverse the array, so the outer collapsibles are opened first, then the innermost.
   // Also, checking if the current button (trigger) is already opened by default. If so, skip.
-  traverseCollapsibles(el).forEach(collapsible => console.log('click ', collapsible));
-  traverseCollapsibles(el).forEach(collapsible => collapsible.click());
+  traverseCollapsibles(el).reverse().forEach(collapsible => console.log('click ', collapsible));
+  traverseCollapsibles(el).reverse().forEach(collapsible => collapsible.click());
   
   // Scroll to element
   el.scrollIntoView();
