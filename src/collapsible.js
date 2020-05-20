@@ -95,7 +95,10 @@ function toggleContent(content, expanded) {
     content.removeAttribute("aria-hidden");
   }
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
-  zenscroll.intoView(findWrapper(content), 300);
+  if (!expanded) {
+    zenscroll.setup(null, 90);
+    zenscroll.to(findWrapper(content));
+  }
 }
 
 export { collapsible };
