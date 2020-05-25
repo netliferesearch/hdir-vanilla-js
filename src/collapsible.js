@@ -97,7 +97,9 @@ function toggleContent(content, expanded) {
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
   if (!expanded) {
     zenscroll.setup(null, 90);
-    zenscroll.to(findWrapper(content));
+    setTimeout(() => {
+      zenscroll.to(findWrapper(content));
+    }, 50);
   }
 }
 
