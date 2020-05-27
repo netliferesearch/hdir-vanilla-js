@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-globals */
+import zenscroll from "zenscroll";
 
 // Get fragment from url
 const getFragment = url => {
@@ -27,6 +28,7 @@ export default function scrollToTitleFromUrlHash() {
 // Helpers
 const isCollapsible = (el) => el.classList.contains('b-collapsible__content');
 const getCollapsibleTrigger = (el) => el.parentNode.querySelector('button');
+const getHeading = (targetID) => document.querySelectorAll(`.b-collapsible__button[aria-controls="${targetID}"]`);
 
 // Traverse the DOM, starting from element, moving upwards
 const traverseCollapsibles = (el) => {
@@ -65,15 +67,17 @@ const handleTarget = (el) => {
   // Traverse and open collapsibles
   // We first reverse the array, so the outer collapsibles are opened first, then the innermost.
   // Also, checking if the current button (trigger) is already opened by default. If so, skip.
-  console.log(el);
-
-  traverseCollapsibles(el).reverse().forEach(collapsible => console.log('click ', collapsible));
+  // console.log('el', el);
+  // traverseCollapsibles(el).reverse().forEach(collapsible => console.log('click ', collapsible));
   traverseCollapsibles(el).reverse().forEach(collapsible => collapsible.click());
   
-  // Scroll to element
-  setTimeout(() => {
-    el.scrollIntoView(true);
-  },50);
+  // Scroll to element: NOTE - this is now handled when activating the collapsibles
+  // setTimeout(() => {
+  //   const heading = getHeading(el.id)[0];
+  //   console.log('target heading', heading);
+  //   zenscroll.setup(null, 0);
+  //   zenscroll.to(heading);
+  // },30);
 
   return;
 };
@@ -88,6 +92,7 @@ async function waitForIt(selector, retries = 5) {
   try {
     // Find element
     const element = document.querySelector(selector);
+    console.log(selector);
     // Return if element exists
     if (element) {
       return element;

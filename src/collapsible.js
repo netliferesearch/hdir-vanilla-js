@@ -41,7 +41,7 @@ function collapsible(e) {
     } else {
       elemClasses.add("b-collapsible__button--active");
     }
-    toggleContent(targetElement, expanded);
+    toggleContent(targetElement, expanded, element);
   });
 
   // The subheading element that renders as a 'p' tag, non-clickable
@@ -83,7 +83,7 @@ function findWrapper(child) {
   }
 }
 
-function toggleContent(content, expanded) {
+function toggleContent(content, expanded, el) {
   if (!content) {
     return;
   }
@@ -96,10 +96,11 @@ function toggleContent(content, expanded) {
   }
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
   if (!expanded) {
-    zenscroll.setup(null, 90);
+    zenscroll.setup(null, 10);
     setTimeout(() => {
-      zenscroll.to(findWrapper(content));
-    }, 50);
+      console.log('target', findWrapper(el))
+      zenscroll.to(findWrapper(el));
+    }, 200);
   }
 }
 
