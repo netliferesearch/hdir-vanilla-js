@@ -98,7 +98,6 @@ function toggleContent(content, expanded, el) {
   if (!expanded) {
     zenscroll.setup(null, 10);
     setTimeout(() => {
-      console.log('target', findWrapper(el))
       zenscroll.to(findWrapper(el));
     }, 200);
   }

@@ -14,7 +14,6 @@ export default function scrollToTitleFromUrlHash() {
   const lastHash = getFragment(url);
   // If there is no hash in url return and do nothing
   if (!lastHash) return false;
-  console.log(`#${lastHash}`);
 
   // Find hash in document and scroll to that title (h2)
   waitForIt(`#${lastHash}`)
@@ -35,7 +34,6 @@ const traverseCollapsibles = (el) => {
   let elements = [];
   while (el = el.parentElement) { // go up till <html>
     if (el.classList.contains('b-collapsible')) {
-      console.log('el', el);
       const collapsibleButton = el.querySelectorAll(`button[aria-controls]`)[0];
 
       // Skip already opened elements (behandling)
@@ -67,17 +65,13 @@ const handleTarget = (el) => {
   // Traverse and open collapsibles
   // We first reverse the array, so the outer collapsibles are opened first, then the innermost.
   // Also, checking if the current button (trigger) is already opened by default. If so, skip.
-  // console.log('el', el);
   // traverseCollapsibles(el).reverse().forEach(collapsible => console.log('click ', collapsible));
   traverseCollapsibles(el).reverse().forEach(collapsible => collapsible.click());
   
-  // Scroll to element: NOTE - this is now handled when activating the collapsibles
-  // setTimeout(() => {
-  //   const heading = getHeading(el.id)[0];
-  //   console.log('target heading', heading);
-  //   zenscroll.setup(null, 0);
-  //   zenscroll.to(heading);
-  // },30);
+  // Scroll to element
+  const heading = getHeading(el.id)[0];
+  zenscroll.setup(null, 0);
+  zenscroll.to(heading);
 
   return;
 };
