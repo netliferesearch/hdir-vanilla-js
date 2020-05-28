@@ -25,7 +25,7 @@ function collapsible(e) {
 
   // If footer button was clicked, we have a different parent
   if (theParent.classList.contains("b-collapsible__footer")) {
-    theParent = element.parentElement.parentElement.parentElement;
+    theParent = element.parentElement.parentElement;
   }
 
   // Toggle active collapsible class on 'collapsible' button
