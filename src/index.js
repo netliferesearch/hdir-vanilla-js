@@ -4,6 +4,7 @@ import "./polyfillRemove";
 import { collapsible } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
 import { makeListExpandable } from "./expandableList";
+import { generateToggleContent } from "./toggleContent";
 import { requestFullscreen, exitFullscreen } from "./fullscreen";
 import scrollToTitleFromUrlHash from './scrollToTitleFromUrlHash.js';
 
@@ -109,3 +110,5 @@ const toggleProfessionPicker = () => {
     picker.removeAttribute("hidden");
   }
 };
+
+generateToggleContent();
