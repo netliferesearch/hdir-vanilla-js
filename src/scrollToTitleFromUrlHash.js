@@ -70,7 +70,6 @@ const handleTarget = (el) => {
   
   // Scroll to element
   const heading = getHeading(el.id)[0];
-  zenscroll.setup(null, 0);
   setTimeout(() => {
     zenscroll.to(heading);
   }, 100);

@@ -30,7 +30,7 @@ function collapsible(e) {
 
   // Toggle active collapsible class on 'collapsible' button
   const allButtons = theParent.querySelectorAll(`.b-collapsible__button[aria-controls="${targetID}"]`);
-  allButtons.forEach(button => {
+  Array.prototype.slice.call(allButtons).forEach(button => {
     const expanded =
       button.getAttribute("aria-expanded") === "true" ? true : false;
     // Toggle expanded value
@@ -83,6 +83,8 @@ function findWrapper(child) {
   }
 }
 
+const getHeading = (targetID) => document.querySelectorAll(`.b-collapsible__button[aria-controls="${targetID}"]`);
+
 function toggleContent(content, expanded, el) {
   if (!content) {
     return;
@@ -97,8 +99,9 @@ function toggleContent(content, expanded, el) {
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
   if (!expanded) {
     zenscroll.setup(null, 10);
+    const elem = findWrapper(el);
     setTimeout(() => {
-      zenscroll.to(findWrapper(el));
+      zenscroll.to(elem);
     }, 200);
   }
 }

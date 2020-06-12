@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import "url-polyfill";
+import 'nodelist-foreach-polyfill';
 import "./polyfillRemove";
 import { collapsible } from "./collapsible";
 import { setParams, setInputValue, resetSearchParams } from "./filterToggler";
