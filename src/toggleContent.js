@@ -1,9 +1,11 @@
 export const generateToggleContent = () => {
   const wrapper = document.querySelector('.b-toggle-content');
   const textContent = document.querySelector('.b-toggle-content__text');
+  const textLength = textContent ? textContent.innerText.replace(/(<([^>]+)>)/ig, "") : '';
 
-  // Use toggle mode when over 400 chars
-  if (wrapper && textContent && textContent.innerHTML.length > 500) {
+  // Use toggle mode when over 500 chars
+  console.log(textLength.length);
+  if (wrapper && textContent && textLength.length > 500) {
     wrapper.classList.add('toggle-mode');
   }
 
