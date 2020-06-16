@@ -54,8 +54,8 @@ function collapsible(e) {
     theParent.classList.remove("b-collapsible--active");
   } else {
     theParent.classList.add("b-collapsible--active");
-    if (history.pushState) {
-      history.pushState(null, null, `#${targetID}`);
+    if (history.replaceState) {
+      history.replaceState(null, null, `#${targetID}`);
     }
     else {
       location.hash = `#${targetID}`;
