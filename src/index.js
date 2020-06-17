@@ -17,21 +17,6 @@ collapsableElements.forEach(item => {
   item.addEventListener("click", collapsible, false);
 });
 
-// If internal link to collapsible (i.e. search results), we need to trigger scrollToTitleFromUrlHash
-// Checking if target exists before proceeding, in case the internal link is for something else
-const collapsibleInternalLink = [
-  ...document.querySelectorAll("a[href^='#']")
-];
-collapsibleInternalLink.forEach(item => {
-  item.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!document.getElementById(target)) {
-      scrollToTitleFromUrlHash('#' + target);
-    }
-  }, false);
-});
-
-
 // Looks at the url hash and collapse the collapsable with a match
 if (collapsableElements.length) {
   // collapseFromUrl();
