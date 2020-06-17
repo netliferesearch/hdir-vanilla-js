@@ -7,287 +7,501 @@
     <script src="./hdir-vanilla.js" defer></script>
     <link rel="stylesheet" href="App.css" />
     <style>
+      body {
+        background: #ddd;
+      }
         .hide { display: none; }
+
+        .b-collapsible--active.b-collapsible--background {
+          background: white;
+        }
+
+        .b-collapsible__button:before {
+            display: block;
+            position: absolute;
+            content: ' ';
+            width: 20px;
+            height: 20px;
+            margin-left: -1.75em;
+            
+            transform: rotate(90deg);
+            background-image: url(chevron.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            left: 0px;
+            top: 7px;
+        }
+        .b-collapsible__button--active:before {
+            transform: rotate(180deg);
+            top: 0;
+        }
     </style>
   </head>
   <body>
+    <p>
+      <a href="#paragraf-1-3-definisjoner">Test</a>
+    </p>
 
-<div class="l-mt-3">
-  <!-- If Fase -->
-
-  <div id="henvisning-og-start" class="b-collapsible b-collapsible--active">
-    <button class="b-collapsible__button b-collapsible__button--active" aria-expanded="false"
-      aria-controls="gravideogrusmidler2onepager-henvisningogstart">
-      <h2 class="b-collapsible__heading h3">Henvisning og start</h2>
-    </button>
-    <div class="l-mt-1">
-      <div class="b-icon-with-text">
-        <img
-          src="https://helsedir-helsenett-xptest.enonic.cloud/_/asset/helsedirektoratet:1589374212/static/icons/clock.svg"
-          alt="Klokkeikon" role="presentation" class="b-icon-with-text__image b-icon-with-text__image--small"
-          aria-hidden="true">
-        <span class="b-icon-with-text__text">Forløpstid</span>
-      </div>
-      <ul class="b-narrow-list">
-        <li class="b-narrow-list__item t--small t--grey">2 dager fra vurdering til henvisning</li>
-        <li class="b-narrow-list__item t--small t--grey">4 dager fra henvisning til oppfølging</li>
-      </ul>
-    </div>
-    <div id="gravideogrusmidler2onepager-henvisningogstart" class="b-collapsible__content b-collapsible__content--small"
-      hidden="" aria-hidden="true">
-      <div class="col-xs-12 col-md-10 col-md-offset-1">
-
-        <!-- Include Leafs -->
+<div class="b-collapsible b-collapsible--background" data-parent-id="paragraf-1-3-definisjoner">
+  <button class="b-collapsible__button" aria-expanded="false" aria-controls="paragraf-1-3-definisjoner">
+    <h2 class="b-collapsible__heading h2">§ 1-3. Definisjoner</h2>
+  </button>
+  <div id="paragraf-1-3-definisjoner" class="b-collapsible__content" hidden="" aria-hidden="true">
 
 
-        <div class="l-mt-2">
-          <div id="forste-samtale" class="b-collapsible b-collapsible--medium">
-            <div class="b-collapsible__category">AKTIVITET</div>
 
-            <!-- Tittel -->
-            <button class="b-collapsible__button b-collapsible__button--medium b-collapsible__button--active"
-              aria-expanded="false" aria-controls="gravideogrusmidler2onepager-henvisningogstart-forstesamtale">
-              <h3 class="b-collapsible__heading h4">Første samtale</h3>
-            </button>
-            <!-- Malgruppe List -->
-
-            <div id="gravideogrusmidler2onepager-henvisningogstart-forstesamtale" class="b-collapsible__content"
-              aria-hidden="true" hidden="">
-              <!-- Tekst -->
-              <p></p>
-              <p>Henvisende instans bør gjennomføre en kartlegging som inkluderer punktene nedenfor før de sender
-                henvisning til pakkeforløp. Ved kartleggingen må henvisende instans sørge for at den gravide og
-                eventuelt partner/pårørende er delaktig for å sikre god informasjonsutveksling og dialog. Tolk må
-                benyttes der det er nødvendig. Hvis det er hensiktsmessig kan den gravide på dette tidspunktet gi
-                samtykke&nbsp;til samarbeid med navngitte instanser.</p>
-              <p></p>
-              <!-- Beskrivelse av aktiviteten -->
-              <div class="b-collapsible b-collapsible--small">
-                <button class="b-collapsible__button b-collapsible__button--small b-collapsible__button--active"
-                  aria-expanded="false"
-                  aria-controls="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-praktisk">
-                  <h4 class="b-collapsible__heading normal h0--normal">Beskrivelse av aktivitet</h4>
-
-                </button>
-                <div id="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-praktisk"
-                  class="b-collapsible__content" aria-hidden="true" hidden="">
-                  <p></p>
-                  <p>Her kommer utdypende beskrivelse av aktiviteten.</p>
-                  <p></p>
-                </div>
-              </div>
-              <br>
-              <!-- Begrunnelse -->
-              <div class="b-collapsible b-collapsible--small">
-                <button class="b-collapsible__button b-collapsible__button--small b-collapsible__button--active"
-                  aria-expanded="false"
-                  aria-controls="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-begrunnelse">
-                  <h4 class="b-collapsible__heading normal h0--normal">Begrunnelse</h4>
-                </button>
-                <div id="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-begrunnelse"
-                  class="b-collapsible__content" aria-hidden="true" hidden="">
-                  <!-- Sammendrag -->
-                  <div class="l-mb-1">
-                    <div class="b-collapsible b-collapsible--small">
-                      <button class="b-collapsible__button b-collapsible__button--small b-collapsible__button--active"
-                        aria-expanded="false"
-                        aria-controls="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-sammendrag">
-                        <h4 class="b-collapsible__heading normal h0--normal">Sammendrag</h4>
-                      </button>
-                      <div id="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-sammendrag"
-                        aria-hidden="false" class="b-collapsible__content" hidden="">
-                        <p>Hvordan fungerer begrunnelsen?&nbsp;</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Referanse -->
-
-                </div>
-              </div>
-              <br>
-              <!-- Informasjon til pasienten -->
-              <div class="b-collapsible b-collapsible--small">
-                <button class="b-collapsible__button b-collapsible__button--small b-collapsible__button--active"
-                  aria-expanded="false"
-                  aria-controls="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-pasientinformasjon">
-                  <h4 class="b-collapsible__heading normal h0--normal">Informasjon til pasienten</h4>
-                </button>
-                <div id="gravideogrusmidler2onepager-henvisningogstart-forstesamtale-pasientinformasjon"
-                  class="b-collapsible__content" aria-hidden="true" hidden="">
-                  <p></p>
-                  <p>Nyttig info til pasient og pårørende, f.eks. info på HelseNorge.&nbsp;</p>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <p></p>
+    <div class="b-quote">
+      <q class="b-quote__blockquote">
+        <h3>Lovtekst:</h3>
+        <div class="lovdata-ledd-1">I denne lov brukes alkoholholdig drikk som fellesbetegnelse på drikker som
+          inneholder mer enn 2,5 volumprosent alkohol, likevel slik at aldersgrensebestemmelsen i § 1-5 også får
+          anvendelse på drikk mellom 0,7 og 2,5 volumprosent alkohol.</div>
+        <div class="lovdata-ledd-2">I denne loven betyr:<br>
+          <ul>
+            <li>- alkoholfri drikk: drikk som inneholder under 0,7 volumprosent alkohol</li>
+            <li>- alkoholsvak drikk: drikk som inneholder fra og med 0,7 til og med 2,5 volumprosent alkohol</li>
+            <li>- alkoholholdig drikk gruppe 1: drikk som inneholder over 2,5 og høyst 4,7 volumprosent alkohol</li>
+            <li>- alkoholholdig drikk gruppe 2: drikk som inneholder over 4,7 og mindre enn 22 volumprosent alkohol</li>
+            <li>- alkoholholdig drikk gruppe 3: drikk som inneholder fra og med 22 til og med 60 volumprosent alkohol
+            </li>
+          </ul>
         </div>
+        <div class="lovdata-ledd-3">Med brennevin forstås drikk som inneholder tilvirket alkohol ublandet eller i
+          blanding med andre produkter. Enhver drikk som inneholder 22 volumprosent alkohol eller mer, regnes som
+          brennevin.</div>
+        <div class="lovdata-ledd-4">Som alkoholholdig drikk etter denne lov regnes ikke væsker som ved denaturering
+          eller av andre grunner er uhensiktsmessig som berusningsmiddel og heller ikke væsker som bare er tilsatt den
+          mengde alkohol som er nødvendig for oppløsning eller holdbarhet.</div>
+        <div class="lovdata-ledd-5">Bestemmelsene i denne lov gjelder ikke alkohol som i medhold av annen lov selges,
+          kjøpes, utleveres eller sendes til medisinsk eller teknisk eller vitenskapelig bruk, eller sprit til
+          desinfeksjonsbruk.</div>
+        <div class="lovdata-ledd-6">Departementet kan gi forskrifter om hvilke alkoholholdige produkter som skal regnes
+          som alkoholholdig drikk, og om hvilke alkoholholdige drikker som skal regnes som brennevin. I tvilstilfelle
+          kan departementet avgjøre spørsmålene med bindende virkning.</div>
+        <p class="b-quote__footnote">Fotnote: <br> 0 Endret ved lover 23 juni 1995 nr. 42, 16 mai 1997 nr. 28 (ikr. 1
+          jan 1998), 2 juli 1999 nr. 57 (ikr. 1 juli 1999), 13 des 2002 nr. 87 (ikr. 1 jan 2003 iflg. res. 13 des 2002
+          nr. 1396), 17 des 2004 nr. 86 (ikr. 1 juli 2005 iflg. res. 17 juni 2005 nr. 599), 6 mai 2011 nr. 13 (ikr. 1
+          jan 2012 iflg. res. 6 mai 2011 nr. 466).</p>
+      </q>
+      <div class="t-sm-right">
+        Alkoholloven
 
-
-
-
-        <!-- Include Leafs -->
-
-
-        <div class="l-mt-2">
-          <div id="dialog" class="b-collapsible b-collapsible--medium">
-            <div class="b-collapsible__category">AKTIVITET</div>
-
-            <!-- Tittel -->
-            <button class="b-collapsible__button b-collapsible__button--medium b-collapsible__button--active"
-              aria-expanded="false" aria-controls="gravideogrusmidler2onepager-henvisningogstart-dialog">
-              <h3 class="b-collapsible__heading h4">Dialog</h3>
-            </button>
-            <!-- Malgruppe List -->
-
-            <div id="gravideogrusmidler2onepager-henvisningogstart-dialog" class="b-collapsible__content"
-              aria-hidden="true" hidden="">
-              <!-- Tekst -->
-              <p></p>
-              <!-- Beskrivelse av aktiviteten -->
-
-              <br>
-              <!-- Begrunnelse -->
-
-              <br>
-              <!-- Informasjon til pasienten -->
-
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <!-- Include Leafs -->
-
-
-        <div class="l-mt-2">
-          <div id="start-pakkeforlop" class="b-collapsible b-collapsible--medium">
-            <div class="b-collapsible__category">AKTIVITET</div>
-
-            <!-- Tittel -->
-            <button class="b-collapsible__button b-collapsible__button--medium b-collapsible__button--active"
-              aria-expanded="false" aria-controls="gravideogrusmidler2onepager-henvisningogstart-startpakkeforlop">
-              <h3 class="b-collapsible__heading h4">Start pakkeforløp</h3>
-            </button>
-            <!-- Malgruppe List -->
-
-            <div id="gravideogrusmidler2onepager-henvisningogstart-startpakkeforlop" class="b-collapsible__content"
-              aria-hidden="true" hidden="">
-              <!-- Tekst -->
-              <p></p>
-              <!-- Beskrivelse av aktiviteten -->
-
-              <br>
-              <!-- Begrunnelse -->
-
-              <br>
-              <!-- Informasjon til pasienten -->
-
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <!-- Include Leafs -->
-
-
-        <div class="l-mt-2">
-          <div id="forlopstider-oppsumert" class="b-collapsible b-collapsible--medium">
-
-            <div class="b-collapsible__category">INFORMASJON</div>
-            <!-- Tittel -->
-            <button class="b-collapsible__button b-collapsible__button--medium b-collapsible__button--active"
-              aria-expanded="false" aria-controls="gravideogrusmidler2onepager-henvisningogstart-forlopstideroppsumert">
-              <h3 class="b-collapsible__heading h4">Forløpstider - oppsumert</h3>
-            </button>
-            <!-- Malgruppe List -->
-
-            <div id="gravideogrusmidler2onepager-henvisningogstart-forlopstideroppsumert" class="b-collapsible__content"
-              aria-hidden="true" hidden="">
-              <!-- Tekst -->
-              <p></p>
-              <p>f sdf sd fsd fsd fsd fsd fsd fsd</p>
-              <p></p>
-              <!-- Beskrivelse av aktiviteten -->
-
-              <br>
-              <!-- Begrunnelse -->
-              <div class="b-collapsible b-collapsible--small">
-                <button class="b-collapsible__button b-collapsible__button--small b-collapsible__button--active"
-                  aria-expanded="false"
-                  aria-controls="gravideogrusmidler2onepager-henvisningogstart-forlopstideroppsumert-begrunnelse">
-                  <h4 class="b-collapsible__heading normal h0--normal">Begrunnelse</h4>
-                </button>
-                <div id="gravideogrusmidler2onepager-henvisningogstart-forlopstideroppsumert-begrunnelse"
-                  class="b-collapsible__content" aria-hidden="true" hidden="">
-                  <!-- Sammendrag -->
-                  <div class="l-mb-1">
-                    <div class="b-collapsible b-collapsible--small">
-                      <button class="b-collapsible__button b-collapsible__button--small b-collapsible__button--active"
-                        aria-expanded="false"
-                        aria-controls="gravideogrusmidler2onepager-henvisningogstart-forlopstideroppsumert-sammendrag">
-                        <h4 class="b-collapsible__heading normal h0--normal">Sammendrag</h4>
-                      </button>
-                      <div id="gravideogrusmidler2onepager-henvisningogstart-forlopstideroppsumert-sammendrag"
-                        aria-hidden="false" class="b-collapsible__content" hidden="">
-                        <p>f</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Referanse -->
-
-                </div>
-              </div>
-              <br>
-              <!-- Informasjon til pasienten -->
-
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <!-- Include Leafs -->
-
-
-        <div class="l-mt-2">
-          <div id="informasjon-kode-gjenbruk" class="b-collapsible b-collapsible--medium">
-
-            <div class="b-collapsible__category">INFORMASJON</div>
-            <!-- Tittel -->
-            <button class="b-collapsible__button b-collapsible__button--medium b-collapsible__button--active"
-              aria-expanded="false"
-              aria-controls="gravideogrusmidler2onepager-henvisningogstart-informasjonkodegjenbruk">
-              <h3 class="b-collapsible__heading h4">Informasjon - kode (gjenbruk)</h3>
-            </button>
-            <!-- Malgruppe List -->
-
-            <div id="gravideogrusmidler2onepager-henvisningogstart-informasjonkodegjenbruk"
-              class="b-collapsible__content" aria-hidden="true" hidden="">
-              <!-- Tekst -->
-              <p></p>
-              <!-- Beskrivelse av aktiviteten -->
-
-              <br>
-              <!-- Begrunnelse -->
-
-              <br>
-              <!-- Informasjon til pasienten -->
-
-            </div>
-          </div>
-        </div>
-
-
+        § 1-3
 
       </div>
+      <div class="b-quote__source">Kilde: lovdata.no</div>
     </div>
+
+    <p></p>
+    <h3>Kommentarer</h3>
+    <h3 style="margin-left:0cm; margin-right:0cm"><strong>1.3.1 Generelt om bestemmelsen</strong></h3>
+
+    <p style="margin-left:0cm; margin-right:0cm">Med alkoholholdig drikk menes drikk som inneholder mer enn 2,5
+      volumprosent alkohol.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Tidligere baserte lovens system seg på en inndeling av alkoholholdig
+      drikk etter alkoholtypene øl, vin og brennevin. Lovens system ble i 2005 endret til å bygge på en inndeling som
+      baserer seg på alkoholinnholdet i drikken, målt i volumprosent. Dette betyr at alkoholholdig drikk med samme
+      alkoholinnhold likebehandles.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">I alkoholforskriften § 1-1 er det gitt definisjoner av alkoholfri
+      drikk, alkoholsvak drikk og alkoholholdig drikk gruppe 1 – 3, uten at disse samtidig er gjort til
+      legaldefinisjoner i loven.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Inndelingen etter alkoholstyrke har betydning for retten til
+      produksjon, import, eksport, engrossalg, omfanget av en salgs- eller skjenkebevilling, salgs- og skjenketidene,
+      aldersgrensebestemmelsene og omsetningsgebyrene.</p>
+
+    <h3 style="margin-left:0cm; margin-right:0cm"><strong>1.3.2 Nærmere om bestemmelsens innhold </strong></h3>
+
+    <p style="margin-left:0cm; margin-right:0cm">Etter bestemmelsens første ledd omfatter loven alkoholholdig drikk som
+      inneholder mer enn 2,5 volumprosent alkohol. Drikk med lavere alkoholinnhold faller utenfor lovens reguleringer,
+      jf. likevel § 1-5 om aldersgrensene som får anvendelse på drikk som inneholder mer enn 0,7 volumprosent alkohol,
+      og reklameforbudet i § 9-2 første ledd, som får anvendelse på reklame for andre varer med samme merke eller
+      kjennetegn som drikk som inneholder mer enn 2,5 volumprosent alkohol.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Lovens inndelingssystem har medført at definisjonene av øl og vin er
+      opphevet. Definisjonen av brennevin i andre ledd er imidlertid opprettholdt. Dette er fordi loven inneholder en
+      rekke særregler knyttet til brennevin, spesielt i lovens kapittel 8, 9 og 10.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Med brennevin forstås alle drikker som er basert på tilvirket alkohol
+      fremstilt ved destillasjon, gjæring med påfølgende destillasjon eller annen teknisk prosess, uavhengig av
+      alkoholinnhold. Drikken kan være ublandet, blandet med andre produkter eller tilsatt andre produkter. Betegnelsen
+      brennevin dekker dermed alle blandingsprodukter som inneholder tilvirket alkohol. Også sterkvin omfattes av denne
+      definisjonen av brennevin. All alkoholholdig drikk med 22 volumprosent alkohol eller mer regnes som brennevin,
+      uavhengig av fremstillingsmåte.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Etter tredje ledd reguleres omsetningen av denaturert sprit (rødsprit
+      o.l.) ikke av alkoholloven. Det gjør heller ikke varer der alkohol er brukt som oppløsnings- eller
+      konserveringsmiddel. Grensen kan være vanskelig å trekke. I praksis legges det vekt på om en vare er egnet som
+      berusningsmiddel.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">I bestemmelsens fjerde ledd trekkes det en grense ved alkohol som ikke
+      er beregnet på å drikkes. Slik alkohol reguleres av særavgiftsforskriften kapittel 3-3. Forskriften administreres
+      av Finansdepartementet.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Departementet er i femte ledd gitt hjemmel til å gi forskrifter om at
+      alkoholholdige produkter som vanskelig kan betegnes som «drikk», likevel skal kunne regnes som alkoholholdig drikk
+      i alkohollovens forstand. Slik forskrift er ikke gitt. Det presiseres imidlertid at man med denne adgangen til å
+      utvide alkohollovens saklige virkeområde ikke har til hensikt å ramme produkter som er uegnet som
+      berusningsmiddel, for eksempel tradisjonell konfektsjokolade og lignende.</p>
+
+    <p style="margin-left:0cm; margin-right:0cm">Også produkter nevnt i en slik forskrift vil omfattes av avgrensningene
+      i § 1-3 første ledd første punktum. Dette innebærer at produktene omfattes av alkohollovens bestemmelser om
+      alkoholholdig drikk, i den grad de inneholder mer enn 2,5 volumprosent alkohol. Likevel slik at
+      aldersgrensebestemmelsen i § 1-5 også vil få anvendelse på alkoholsvake produkter, som inneholder 0,7-2,5
+      volumprosent alkohol.</p>
+    <!-- <h3>Første ledd:</h3>
+  <p>Første ledd stiller krav til helsepersonell om å utøve arbeidet sitt i samsvar med krav til faglig forsvarlighet og omsorgsfull hjelp.</p> -->
+
+    <div class="b-collapsible__footer">
+      <button class="b-collapsible__button b-button b-button--secondary" aria-expanded="false" hidden=""
+        aria-controls="paragraf-1-3-definisjoner">Lukk</button>
+      <div class="b-collapsible__meta-date">Sist faglig oppdatert: 07. februar 2019</div>
+    </div>
+
   </div>
+</div>
+    
+
+<div class="b-collapsible b-collapsible--background" data-parent-id="paragraf-fysisk-aktivitet-ved-diabetes-type-2">
+          <button class="b-collapsible__button" aria-expanded="false" aria-controls="paragraf-fysisk-aktivitet-ved-diabetes-type-2">
+            <h2 class="b-collapsible__heading h2">Fysisk aktivitet ved diabetes type 2Fysisk aktivitet ved diabetes type 2Fysisk aktivitet ved diabetes type 2Fysisk aktivitet ved diabetes type 2Fysisk aktivitet ved diabetes type 2</h2>
+          </button>
+          <div id="paragraf-fysisk-aktivitet-ved-diabetes-type-2" class="b-collapsible__content" hidden="" aria-hidden="true">
+            
+              
+  
+  <!-- Tekst Anbefaling -->
+  <p></p><p>Personer med diabetes type 2 anbefales å være fysisk aktive med moderat til høy intensitet minimum 150 minutter per uke.</p><p>Det er et dose-respons-forhold og økt aktivitet gir økt gevinst. Både styrketrening og utholdenhetstrening påvirker blodsukkeret gunstig, og kombinasjonen gir best effekt. Derfor foreslås det at personer med diabetes type 2 tilbys et strukturert program bestående av både utholdenhets- og styrketrening.</p><p></p>
+
+
+  <!-- Behandling -->
+  
+  <!---->
+
+  <!-- Praktisk -->
+  
+    <div class="b-collapsible b-collapsible--small">
+      <button class="b-collapsible__button b-collapsible__button--small" aria-expanded="false" aria-controls="collapsible-praktisk45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8">
+
+        <div>
+          
+          <h3 class="b-collapsible__heading h4">Praktisk – slik kan anbefalingen følgesPraktisk – slik kan anbefalingen følgesPraktisk – slik kan anbefalingen følgesPraktisk – slik kan anbefalingen følgesPraktisk – slik kan anbefalingen følgesPraktisk – slik kan anbefalingen følges
+          </h3>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+      </button>
+
+      <div id="collapsible-praktisk45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" class="b-collapsible__content" hidden="" aria-hidden="true"><h3>Verktøy til bruk for kartlegging og motivasjon</h3><p>Å få til varig atferdsendring kan være krevende. Det finnes verktøy som kan øke suksessraten for etterlevelse av livsstilsråd (Nilsen et al 2015), se kapittelet <a href="https://helsedirektoratet.no/retningslinjer/diabetes/kommunikasjon-mestring-og-motivasjon-ved-diabetes">Kommunikasjon, mestring og motivasjon ved diabetes</a>.</p><h3>Høy intensitetstrening</h3><p>I metaanalysen vi har brukt ble det ikke funnet en ytterligere effekt av intensiv trening utover moderat intensitetstrening. Det betyr ikke at økt intensitet ikke vil gi ytterligere effekt. Det er vist at økt intensitet på treningen (ca 75% av maksimalt oksygenopptak) er assosiert med HbA1c-reduksjon (Boule et al 2003). Dette er en intensitet som kan beskrives som høy, men som ikke må forveksles med begrepet "høyintensitetstrening". Høyintensitetstrening uføres som intervalltrening og intensiteten er gjerne 90% eller høyere av maksimal hjertefrekvens. Intervallene kan variere fra 30 sekunder til 4-5 minutter. Dette er en form for trening som er tidseffektiv og som vil gi god effekt på kondisjon. 75% av maksimalt oksygenopptak er dog en lavere intensitet som man kan utøve i lang tid (1-2 timer) avhengig av treningstilstand.</p><h3>Individualisering</h3><p>I all diabetesbehandling er det viktig med individuell tilpasning, dette er uavhengig av kjønn, kultur, religion og tradisjon. Hva som kan forventes av effekt av fysisk aktivitetstiltak er også individuelt. Det er vist i flere studier at effekten på metabolsk kontroll er større når HbA1c før intervensjon er over 53 mmol/mol (7 %) sammenlignet med verdier på 53 mmol/mol&nbsp;(7 %) eller lavere (Umpierre D et al, 2013).</p><p>Faggruppen anbefaler at det er fagpersoner med utdanning inne fysisk aktivitet og helse, eller tilsvarende utdanning med fokus på fysisk aktivitet, fysisk trening og treningslære (bachelor grad eller høyere), som er ansvarlig for veiledning og tilretteleggingen av ulike fysisk aktivitetstiltak for målgruppen.</p><h3>Praktiske råd</h3><ul>	<li>Kartlegg pasientens aktivitetsnivå (hverdagsaktiviteter og fritidsaktiviteter) og motivasjon til fysisk aktivitet (aktivitetsanamnese)</li>	<li>Kartlegg hva pasienten liker å gjøre, eventuelt har gjort tidligere og har positive erfaringer med (aktivitetsanamnese) og ta utgangspunkt i dette, benytt kommunikasjonsmetoder som motiverer til mer av det som er bra</li>	<li>Diskuter med pasienten hvilke eller foreslå aktiviteter som er realistiske og gjennomførbare og som pasienten liker eller ønsker å prøve</li>	<li>Sammen med pasienten bør fastlege, annet helsepersonell sette realistiske delmål, identifisere hindringer, kartlegge mulighetene for å unngå disse, lage en konkret aktivitetsplan og gjennomføre regelmessige oppfølginger (se eget kapittel om mestring og motivasjon for hvilke spørsmål som kan stilles)</li>	<li>Følg opp - oppfølgingene kan gjøres per telefon eller på legekontoret (disse kan gjøres av andre enn fastlegen om dette er avtalt på forhånd), oppfølgingen kan tidsmessig deles i tre faser:	<ul>		<li>hvordan fysisk aktivitet har vært planlagt og gjennomført i løpet av uken som var</li>		<li>hvordan overgangen til et nytt nivå av fysisk aktivitet har fungert de siste f. eks. 6-12 uker, og</li>		<li>om pasienten har nådd det langsiktige og overordnede mål</li>	</ul>	</li>	<li>Ved overvekt/fedme og for den som er utrent kan ikke-vektbærende aktiviteter, for eksempel sykling (innendørs/utendørs), bruk av romaskin, svømming, vanngymnastikk/trening og/eller styrketrening oppleves bedre/gi bedre mestringsopplevelse enn vektbærende aktiviteter eller aktiviteter som krever stor grad av koordinasjon</li>	<li>Start forsiktig og tilpasse belastning (varighet, intensitet og frekvens) gradvis</li>	<li>«Fysisk aktivitetsresept» som kan benyttes som utgangspunkt under samtalen om fysisk aktivitet, og pasienten sier:	<ul>		<li>«Jeg er ikke interessert»: Reis deg opp å gå litt rundt minst en gang per time.</li>		<li>«Jeg hører deg, men jeg trener ikke»: Vær fysisk aktiv i hverdagen - 7000 skritt per dag og velg trappen når du kan.</li>		<li>«Jeg ønsker å prøve å trene»: 150 minutter gange per uke eller 75 minutter per uke med jogging eller annen fysisk aktivitet med tilsvarende intensitet eller 100 med rask gange.</li>		<li>«Jeg er med!!»: Kondisjonstrening på høyere intensitet + 2 økter eller mer med styrketrening i uken(Gjelder om det ikke er kontraindikasjoner for fysisk aktivitet, se under Forsiktighetsregeler (under)).</li>	</ul>	</li>	<li>Bruk av hjelpemidler som f.eks. skritteller/pedometer, mobilapper som registrerer fysisk aktivitet, fysisk aktivitetsdagbok (papir/elektronisk) i kombinasjon med registrering av blodglukose før, etter og timer etter aktivitet kan virke inspirerende og motiverende for mange</li>	<li>Effekter av tiltak på fysisk aktivitet kan evalueres ved gangtester/ kondisjonstester, styrketester (kan gjøres i regi av f.eks. Frisklivssentraler), HbA1c og/eller subjektive/objektive effekter som er viktige for pasienten</li>	<li>Lag deg en oversikt over lavterskeltilbud og andre tilbud som tilbys i din kommune. Eksempler på tilbydere kan være frisklivssentralene, frivilligsentalene, likepersonsgrupper (f.eks. Diabetesforbundets motivasjonsgrupper, Tjukkasgjengen), lokale idrettslag, Landsforeningen for hjerte og lungesyke (LHL), Den Norske Turistforening, kommersielle aktører</li></ul><p>Diabetesforbundet har god informasjon om fysisk aktivitet og forslag til øvelser. Diabetesforbundets motivasjonsgrupper Finn formen er likepersonsgrupper som har fokus på fysisk aktivitet, kosthold og motivasjon. Se <u><a href="http://www.diabetes.no/">diabetes.no</a></u> for informasjon om hvor og når disse gruppene møtes.</p><ul></ul><h3>Forsiktighetsregler</h3><p><strong>Intensitet: </strong>Ved etablert hjertesykdom, mistanke om angina pectoris, eller ved ønske om å trene med høy intensitet (intensitet som oppleves som svært anstrengende) bør man vurdere hjerteundersøkelse, inkludert et arbeids-EKG. Personer med diabetes har økt forekomst av autonom nevropati og stum iskemi. Mulighetene for dette bør vurderes før man anbefaler trening med høy intensitet.</p><p>Svært hard fysisk aktivitet bør unngås ved ketose da trening kan føre til ytterligere hyperglykemi og tiltagende ketose samt risiko for å utvikle diabetisk ketoacidose.</p><p><strong>Retinopati (øyenbunnsforandringer): </strong>Ved proliferativ diabetesretinopati eller ved alvorlig ikke-proliferativ diabetesretinopati kan svært anstrengende kondisjon- og styrketrening være kontraindusert med tanke på økt risiko for blødninger i øyets glasslegeme eller netthinneavløsning (Fyss, 2015).</p><p><strong>Lavt blodsukker: </strong>Fysisk aktivitet bedrer insulinfølsomheten. Denne kan vedvare i mange timer – opptil to døgn - avhengig av volumet (kombinasjon av varighet og intensitet) på aktiviteten. Hos personer med diabetes type 2 som behandles med blodglukosesenkende medikamenter (insulin eller insulinstimulerende medikamenter) kan det derfor være nødvendig å redusere medikamentdosen og/eller tilføre raskt absorberbare karbohydrater før, under og/eller etter fysisk aktivitet for å unngå lav blodglukose. Reduksjon i eventuell basalinsulindoser og/eller måltidsinsulindoser kan være 20-30 %. Det vil være individuelle forskjeller i dette.</p><p><strong>Høyt blodsukker:</strong> En tilfeldig høy glukoseverdi er ikke en kontraindikasjon for fysisk aktivitet, med mindre samtidig forhøyet ketonnivå. Trening bør utsettes ved betydelig forhøyede plasmaglukosenivå (&gt; 15 mmol / l), dette for å sikre intracellulær energi (Fyss, 2015).</p><p>Personer med <strong>perifer nevropati </strong>bør sjekke sine føtter daglig og være spesielt oppmerksomme på dager de er fysisk aktive. Gode sko anbefales.</p><h3>Stølhet (DOMS)</h3><p>Det er kjent at når man begynner et treningsprogram vil mange oppleve å bli støle. Dette gjelder særlig ved styrketrening, uvante aktiviteter og høy intensitet. Stølhet eller DOMS (delayed onset muscle soreness) er en treg reaksjon som kommer til uttrykk gjerne 24 timer etter aktiviteten. DOMS er en naturlig reaksjon, og den vil forsvinne når man er vant med regelmessig fysisk aktivitet/trening. Imidlertid vil noen – avhengig av mengden av fysisk aktivitet – oppleve lette muskel-skjelettplager. <a href="https://helsedirektoratet.no/Documents/Publikasjonsvedlegg/IS-1592-aktivitetshandboken-kapittel-23-diabetes-type-2.pdf">Se</a><a href="https://helsedirektoratet.no/veiledere/aktivitetshandboken"> detaljer om Fysisk aktivitet og diabetes type 2 i Aktivitetshåndboken</a>.</p><p>&nbsp;</p><h3>Etniske minoriteter</h3><p>Studier fra Norge viser at fysisk aktivitet i ulike innvandrergrupper, øker insulinfølsomheten og bedrer blodsukkerreguleringen (Andersen E, 2012). Svært rolig gange etter et karbohydratrikt måltid senker blodsukkeret gunstig (Lunde MS, 2012).<br>Det er viktig å tilrettelegge for, og ta hensyn til religion, tradisjon og kultur, kjønn og alder. Hver for seg og samlet vil ovenfor nevnte faktorer kunne påvirke evnen og muligheten til å delta i og gjennomføre fysisk aktivitet.<br>I noen innvandrergrupper er det periodisk faste knyttet til religion. Det er ulik aksept i ulike kulturer for deltagelse i fysisk aktivitet og idrettslige aktiviteter. Fysisk aktivitet er utelukkende knyttet til arbeid i noen kulturer, noen som kan bety at det å være fysisk aktiv knyttet til helse er fremmed og ukjent. Mange av kvinnene foretrekker å være fysisk aktive utelukkende med andre kvinner, uten menn tilstede. Det er derfor viktig å legge til rette for fysisk aktivitet for kjønn adskilt. Kvinner og menn vil ofte være fysisk aktive på ulike arenaer.</p></div>
+    </div>
+  
+  <!-- Begrunnelse -->
+  
+    <div class="b-collapsible b-collapsible--small">
+      <button class="b-collapsible__button b-collapsible__button--small" aria-expanded="false" aria-controls="collapsible-begrunnelse45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8">
+
+        <div>
+          
+          <h3 class="b-collapsible__heading h4">Begrunnelse – dette er anbefalingen basert
+            på</h3>
+        </div>
+
+        
+
+        
+
+        
+
+      </button>
+
+      <div id="collapsible-begrunnelse45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-hidden="false" class="b-collapsible__content" hidden="">
+        
+
+        <!-- Sammendrag -->
+        
+          <div class="b-collapsible b-collapsible--small">
+            <button aria-controls="collapsible-sammendrag45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-expanded="false" class="b-collapsible__button b-collapsible__button--small">
+              
+              <h4 class="b-collapsible__heading normal">Sammendrag</h4>
+            </button>
+            <div id="collapsible-sammendrag45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-hidden="false" class="b-collapsible__content" hidden="hidden"><p>	<em>Råd </em>om fysisk aktivitet viste en signifikant større reduksjon i HbA1c på - 0.43% sammenlignet med <em>ingen råd </em>om fysisk aktivitet, men kun når dette ble gitt kombinert med kostråd (Umpierre D 2011).<br>	<br>	Meta-analysen  (Umpierre D 2011) viste at <em>strukturert trening </em>har en effekt på HbA1c (-0.67%) sammenlignet med <em>ingen intervensjon eller kun råd </em>om sunn livsstil/kostråd. Analysene viste også at strukturert trening på mer enn 150 minutter per uke er assosiert med bedre effekt på HbA1c (-0.89%) enn strukturert trening mindre enn 150 minutter (-0.36%).  Det er med andre ord et dose-respons-forhold.</p><p>	Av de 24 studiene (7025 deltakere) som er inkludert i analysen hvor strukturert trening er behandlet, er det ingen som viser en negativ effekt og presisjonen for estimatet er god.</p><p>	Det er vist at høy-intensitetstrening er assosiert med HbA1 reduksjon (Boule et al 2003), men i metaanalysen ble det ikke funnet en ytterligere effekt av intensiv trening sammenlignet med moderat FA.</p><p>	Med hensyn til hvilken type trening som har best effekt på de endepunktene vi var interessert i, fant vi at (Schwingshackl 2014):</p><ol>	<li>Utholdenhetstrening har en ytterligere reduserende effekt på HbA1c og fastende glukose sammenlignet med styrketrening. For øvrig var det ingen forskjeller med hensyn til lipider og blodtrykk. </li>	<li>Kombinasjonstreningen viste en litt bedre effekt på HbA1c, men ingen på fastende glukose, lipider og blodtrykk sammenlignet med utholdenhetstrening alene. </li>	<li>Kombinasjonstrening resulterte i en HbA1C reduksjon på -0.62% (p=0.0002) sammenlignet med styrketrening alene. I tillegg viste analysene en bedre effekt på fastende glukose, triglyserider og systolisk blodtrykk.</li></ol><p>	Vi har ikke funnet meta-analyser av randomiserte kontrollerte studier som viser effekt på de andre endepunktene vi var interessert i. Det er likevel grunn til å tro at de som har diabetes har like god, om ikke bedre effekt av fysisk aktivitet, enn den øvrige befolkningen. Det er vist i flere store kohortstudier (15-20 års oppfølgning) at regelmessig fysisk aktivitet eller god fysisk form (kondisjon) er assosiert med 39-70 % reduksjon i kardiovaskulær og total dødelighet hos personer med diabetes type 2 (og diabetes type 1) (Gregg et al 2003, Hu et al 2005, Church et al 2005). Utholdenhetstrening kan dessuten bedre kondisjonen (Nielsen et al 2006) og bremse utviklingen av perifer nevropati (Balducci et al 2006).<br></p></div>
+          </div>
+        
+
+        <!-- Vurdering -->
+        
+          <div class="b-collapsible b-collapsible--small"><button aria-controls="collapsible-vurdering45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-expanded="false" class="b-collapsible__button b-collapsible__button--small">
+              
+              <h4 class="b-collapsible__heading normal">Vurdering</h4>
+            </button>
+            <div id="collapsible-vurdering45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-hidden="false" class="b-collapsible__content" hidden="hidden">
+              <!-- fordelerogulemper -->
+              <h5><b>Fordeler og ulemper</b></h5>
+              <p></p><p>I studiene vi har sett på reduserer fysisk aktivitet HbA1c med - 0.67% (95% CI: - 0.84, - 0.49) (Umpierre D 2011).</p><p>Vi er avhengig av å bruke surrogat endepunkt (HbA1c) og samtidig anta at de gunstige endringene gir langtidseffekter på kliniske endepunkt, siden det er svært krevende og kostbart å gjennomføre randomiserte kontrollerte studier som kan gi oss svar på hvorvidt fysisk aktivitet alene kan redusere dødelighet og sykelighet. Dette er selvsagt en svakhet, men for å sette effekten av fysisk aktivitet i en sammenheng: Metformin reduserer HbA1c med 1.12% (Hirst et al 2013). Data fra United Kingdom Prosepctive Diabetes Study viser at 1% økning i HbA1c medfører 21% økt risiko for diabetesrelaterte endepunkt.</p><p>Det er også vist i flere store kohortstudier (15-20 års oppfølgning) at regelmessig fysisk aktivitet eller god fysisk form (kondisjon) er assosiert med 39-70% reduksjon i kardiovaskulær og total dødelighet hos personer med DT2 (og DT1) (Gregg et al 2003, Hu et al 2005, Church et al 2005). Utholdenhetstrening kan bedre kondisjonen (Nielsen et al 2006) og bremse utviklingen av perifer nevropati (Balducci et al 2006).<br>Samtidig er det få, om noen negative effekter av å drive fysisk aktivitet, så lenge man forholder seg til forsiktighetsregler nevnt under praktisk.</p><p></p>
+              <!-- kvalitetdokumentasjon -->
+              <h5><b>Kvalitet på dokumentasjonen</b></h5>
+              <p></p><p>Kvaliteten på meta-analysen om rådgivning av fysisk aktivitet (Umpierre D 2011) er vurdert til moderat fordi intervensjonene er beheftet med manglende data på oppfølgning av fysisk aktivitet. Altså – hvor mye aktivitet utførte deltakerne egentlig? En god monitorering av aktivitetsnivået ville gitt betydelig bedre innsikt. Monitorering av strukturert trening er en lettere oppgave og dette estimatet har vi stor tiltro til. Forhold som skaper heterogenitet kan delvis forklares ved baseline HbA1c, varighet og hyppighet på treningen, samt den totale ukentlige treningsmengden.</p><p>Kvaliteten på studiene som danner grunnlag for vurdering av de ulike modaliteter av fysisk aktivitet opp mot hverandre (Schwingshackl L 2014), er vurdert til moderat for effekt på HbA1c, mens estimatene for fastende blodglukose, lipider og blodtrykk er vurdert fra moderat til lav - blant annet på grunn av liten informasjonsstørrelse og vide konfidensintervaller.</p><p></p>
+              <!-- verdierogpreferanser -->
+              <h5><b>Verdi og preferanser</b></h5>
+              <p></p><p>Fysisk aktivitet er en viktig del av behandlingen. Å utøve fysisk aktivitet regelmessig som anbefalt er likevel en av de største utfordringene for mange. Pasienten må prioritere tid til å drive fysisk aktivitet. Manglende evne/lyst til å følge opp anbefalt aktivitet ev. strukturert trening, kan ha negativ effekt på livskvalitet og mestringsopplevelse. Det er derfor viktig at pasienten velger en aktivitetsform de liker; styrke-, utholdenhetsaktiviteter eller kombinasjoner av disse.</p><p></p>
+              <!-- ressurshensyn -->
+              <h5><b>Ressurshensyn</b></h5>
+              <p></p><p>Anbefalingen vil ikke nødvendigvis utløse økt ressursbruk for pasient, men det kan være ekstrautgifter knyttet til eventuelle medlemskap i organisasjoner/institusjoner som gir tilbud om organisert trening og transport til og fra denne aktiviteten.</p><p>Forslaget om å gi personer med diabetes type 2 tilbud om strukturert trening vil kanskje få betydning for helsevesenets/statlige/kommunale utgifter, men vi tror det vil tjenes inn ved at pasienten får en optimalisert behandling.</p><p></p>
+            </div>
+          </div>
+        
+
+        <!-- Pico -->
+        
+          <div class="b-collapsible b-collapsible--small"><button aria-controls="collapsible-forskningsgrunnlag45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-expanded="false" class="b-collapsible__button b-collapsible__button--small">
+              
+              <h4 class="b-collapsible__heading normal">Forskningsgrunnlag</h4>
+            </button>
+            <div id="collapsible-forskningsgrunnlag45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-hidden="true" class="b-collapsible__content" hidden="hidden">
+              
+                <div class="row l-mt-2">
+                  <strong class="col-xs-12 col-md-3 top-xs">Populasjon</strong>
+                  <div class="col-xs-12 col-md-9">Pasienter med diabetes type 2 eller med høy risiko for å utvikle diabetes type 2</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Intervensjon</strong>
+                  <div class="col-xs-12 col-md-9">Råd om fysisk aktivitet (delvis med eller uten veiledet aktivitet)</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Komparator</strong>
+                  <div class="col-xs-12 col-md-9">Ingen intervensjon (noen mottok kostråd/livsstilsråd)</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Utfall</strong>
+                  <div class="col-xs-12 col-md-9">
+                    
+                    <p>
+                      
+                      </p><div class="b-collapsible b-collapsible--small">
+                        <button class="b-collapsible__button b-collapsible__button--small" aria-expanded="false" aria-controls="collapsible-forskningsgrunnlag-tekst86f682d8-4dcc-48af-adb8-5592393cc03f">
+                          
+                          <h4 class="b-collapsible__heading normal">Sammendrag av studie
+                          </h4>
+                        </button>
+                        <div id="collapsible-forskningsgrunnlag-tekst86f682d8-4dcc-48af-adb8-5592393cc03f" aria-hidden="true" class="b-collapsible__content" hidden="">
+                          <div><p>Rasjonale som evidensprofilene (Pico 1 og 2) er tufter på, er hentet fra Umpierre et als systematiske litteraturgjennomgang av randomiserte kontrollerte studier med meta-analyse (JAMA 2011), og er som følger: Strukturert veiledet trening – definert som utholdenhetstrening, styrketrening eller en kombinasjon av disse to treningsformene – er i prinsippet tilgjengelig for mange, men det er liten tradisjon for å legge opp til slik trening for type 2-diabetikere - og trolig er det bare subgrupper som utøver strukturert trening. Samtidig er råd om fysisk aktivitet betydelig mer gjennomførbart og noe alle bør få. Inntil Umpierre et als publikasjon var det ingen som hadde estimert hvilken effekt fysisk aktivitetsråd har på HbA1c.</p><p>Råd om fysisk aktivitet viste en signifikant større reduksjon i HbA1c på - 0.43% sammenlignet med ingen råd om fysisk aktivitet, men kun når dette ble gitt kombinert med kostråd. </p></div>
+                        </div>
+                      </div>
+                    <p></p>
+                  </div>
+                </div>
+              
+              
+                <div class="row l-mt-2">
+                  <strong class="col-xs-12 col-md-3 top-xs">Populasjon</strong>
+                  <div class="col-xs-12 col-md-9">Personer med type 2-diabetes</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Intervensjon</strong>
+                  <div class="col-xs-12 col-md-9">Strukturert trening</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Komparator</strong>
+                  <div class="col-xs-12 col-md-9">Ingen intervensjon (noen mottok kostråd/livsstilsråd)</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Utfall</strong>
+                  <div class="col-xs-12 col-md-9">
+                    
+                    <p>
+                      
+                      </p><div class="b-collapsible b-collapsible--small">
+                        <button class="b-collapsible__button b-collapsible__button--small" aria-expanded="false" aria-controls="collapsible-forskningsgrunnlag-tekst42cc031d-3e42-4c67-ae58-1e4bb75c31ae">
+                          
+                          <h4 class="b-collapsible__heading normal">Sammendrag av studie
+                          </h4>
+                        </button>
+                        <div id="collapsible-forskningsgrunnlag-tekst42cc031d-3e42-4c67-ae58-1e4bb75c31ae" aria-hidden="true" class="b-collapsible__content" hidden="">
+                          <div><p><a href="https://helsedirektoratet.no/retningslinjer/diabetes/dokumenter-diabetes/PICO%203.1.2%20-%20Summary%20of%20findings%20tabell.pdf" target="_blank">Evidensprofil (PDF)</a></p><p>Meta-analysen (Umpierre 2011) viste at strukturert trening har en effekt på HbA1c (-0,67%) sammenlignet med ingen intervensjon eller kost- eller livsstilsråd. Analysene viste også at strukturert trening på mer enn 150 minutter per uke er assosiert med bedre effekt på HbA1c (-0,89%) enn strukturert trening mindre enn 150 minutter (-0,36%). Det er vist at trening med høy intensitet er assosiert med HbA1 reduksjon (Boule et al 2003), men i metaanalysen ble det ikke funnet en ytterligere effekt av intensiv trening.</p><p>Disse estimatene har vi stor tiltro til fordi monitorering av strukturert trening er relativt lett. Forhold som skaper heterogenitet kan delvis forklares ved baseline HbA1c, varighet og hyppighet på treningen, samt den totale ukentlige treningsmengden.</p></div>
+                        </div>
+                      </div>
+                    <p></p>
+                  </div>
+                </div>
+              
+              
+                <div class="row l-mt-2">
+                  <strong class="col-xs-12 col-md-3 top-xs">Populasjon</strong>
+                  <div class="col-xs-12 col-md-9">Personer med type 2 diabetes</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Intervensjon</strong>
+                  <div class="col-xs-12 col-md-9">Utholdenhetstrening, styrketrening eller kombinasjon av både utholdenhets- og styrketrening</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Komparator</strong>
+                  <div class="col-xs-12 col-md-9">1. Utholdenhetstrening vs styrketrening 2.Kombinasjonstrening vs utholdenhetstrening 3.Kombinasjonstrening vs styrketrening</div>
+                </div>
+                <div class="row" role="navigation">
+                  <strong class="col-xs-12 col-md-3 top-xs">Utfall</strong>
+                  <div class="col-xs-12 col-md-9">
+                    
+                    <p>
+                      
+                      </p><div class="b-collapsible b-collapsible--small">
+                        <button class="b-collapsible__button b-collapsible__button--small" aria-expanded="false" aria-controls="collapsible-forskningsgrunnlag-tekst984baa96-fcc4-4d71-8f90-fc094ba111ae">
+                          
+                          <h4 class="b-collapsible__heading normal">Sammendrag av studie
+                          </h4>
+                        </button>
+                        <div id="collapsible-forskningsgrunnlag-tekst984baa96-fcc4-4d71-8f90-fc094ba111ae" aria-hidden="true" class="b-collapsible__content" hidden="">
+                          <div><p><a href="https://helsedirektoratet.no/retningslinjer/diabetes/dokumenter-diabetes/PICO%203.3a%20-%20Summary%20of%20findings%20tabell.pdf" target="_blank">Evidensprofil 1 (PDF)</a></p><p><a href="https://helsedirektoratet.no/retningslinjer/diabetes/dokumenter-diabetes/PICO%203.3b%20-%20Summary%20of%20findings%20tabell.pdf" target="_blank">Evidensprofil 2 (PDF)</a></p><p><a href="https://helsedirektoratet.no/retningslinjer/diabetes/dokumenter-diabetes/PICO%203.3c%20-%20Summary%20of%20findings%20tabell.pdf" target="_blank">Evidensprofil 3 (PDF)</a></p><p>Flere RCT (Sigal et al og Church et al) har vist at både styrketrening og utholdenhetstrening kan ha en effekt på glykemisk kontroll. I en meta-analyse er det estimert at strukturert trening som både inkluderer utholdenhetstrening, styrketrening eller kombinasjonen av disse, kan redusere HbA1C nivået med 0,67% (Umpierre, JAMA 2011). Schwingshackl et als meta-analyse vurderer den enkeltvise effekten av de ulike aktivitetsformene/modalitetene – utholdenhetstrening, styrketrening eller kombinasjonen av disse – på glykemisk kontroll og blodlipider hos personer med type 2-diabetes.</p><p>1.Meta-analysen (Schwingshackl et al 2014) viste at utholdenhetstrening har en bedre effekt på HbA1c (-0.20%, p= 0.0007), og fastende glukose (-0.90 mmol/l, p=0.03) sammenlignet med styrketrening. For øvrig var det ingen forskjeller med hensyn til lipider og blodtrykk.</p><p>2.Kombinasjonstreningen (Kondisjons- + styrketrening) viste en bedre effekt på HbA1c (-0,17%), men det var ingen forskjell i effekt på fastende glukose, lipider og blodtrykk sammenlignet med utholdenhetstrening alene.</p><p>3.Kombinasjonstrening viste en bedre effekt på HbA1c (-0,62%, p=0,0002) sammenlignet med styrketrening alene. I tillegg viste analysene en signifikant bedre effekt på fastende glukose (-1,99 mol/l), triglyserider (-0,28 mmol/l) og systolisk blodtrykk (-4,4 mmHg).</p></div>
+                        </div>
+                      </div>
+                    <p></p>
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        
+
+        <!-- Referanse -->
+        
+        
+          <div class="b-collapsible b-collapsible--small">
+            <button aria-controls="collapsible-referanser45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-expanded="false" class="b-collapsible__button b-collapsible__button--small">
+              
+              <h4 class="b-collapsible__heading normal">Referanser</h4>
+            </button>
+            <div id="collapsible-referanser45c3cb5a-c5da-4520-a4cb-d6bcda3c44f8" aria-hidden="true" class="b-collapsible__content" hidden="hidden">
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    78. Gregg EW, Gerzoff RB, Caspersen CJ, Williamson DF, Narayan KM. 
+                    Relationship of walking to mortality among US adults with diabetes. Arch Intern Med. 2003;163(12):1440-7. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    79. Hu G, Jousilahti P, Barengo NC, Qiao Q, Lakka TA, Tuomilehto J. 
+                    Physical activity, cardiovascular risk factors, and mortality among Finnish adults with diabetes. Diabetes Care. 2005;28(4):799-805. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    80. Church TS, LaMonte MJ, Barlow CE, Blair SN. 
+                    Cardiorespiratory fitness and body mass index as predictors of cardiovascular disease mortality among men with diabetes. Arch Intern Med. 2005;165(18):2114-20. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    81. Nielsen PJ, Hafdahl AR, Conn VS, Lemaster JW, Brown SA. 
+                    Meta-analysis of the effect of exercise interventions on fitness outcomes among adults with type 1 and type 2 diabetes. Diabetes Res Clin Pract. 2006;74(2):111-20. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    82. Adolfsson P SA, Mattsson S, Chaplin JE, Jendle J. 
+                    Education and individualized support regarding exercise and diabetes improves glucose control and level of physical activity in type 1 diabetes individuals. J Endocrinol Diabetes Obes. 2015;3(2):1071. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    83. Sigal RJ, Armstrong MJ, Colby P, Kenny GP, Plotnikoff RC, Reichert SM, et al. 
+                    Physical activity and diabetes. Can J Diabetes. 2013. 37 Suppl 1. 40-44. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    84. Umpierre D, Ribeiro PA, Kramer CK, Leitao CB, Zucatti AT, Azevedo MJ, et al. 
+                    Physical activity advice only or structured exercise training and association with HbA1c levels in type 2 diabetes: a systematic review and meta-analysis. Jama. 2011;305(17):1790-9. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    85. Hirst JA, Farmer AJ, Ali R, Roberts NW, Stevens RJ. 
+                    Quantifying the effect of metformin treatment and dose on glycemic control. Diabetes Care. 2012;35(2):446-54. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    86. Balducci S, Iacobellis G, Parisi L, Di Biase N, Calandriello E, Leonetti F, et al. 
+                    Exercise training can modify the natural history of diabetic peripheral neuropathy. J Diabetes Complications. 2006;20(4):216-23. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    87. Schwingshackl L, Missbach B, Dias S, Konig J, Hoffmann G. 
+                    Impact of different training modalities on glycaemic control and blood lipids in patients with type 2 diabetes: a systematic review and network meta-analysis. Diabetologia. 2014;57(9):1789-97. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    88. Boule NG, Kenny GP, Haddad E, Wells GA, Sigal RJ. 
+                    Meta-analysis of the effect of structured exercise training on cardiorespiratory fitness in Type 2 diabetes mellitus. Diabetologia. 2003;46(8):1071-81. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    89. Umpierre D, Ribeiro PA, Schaan BD, Ribeiro JP. 
+                    Volume of supervised exercise training impacts glycaemic control in patients with type 2 diabetes: a systematic review with meta-regression analysis. Diabetologia. 2013;56(2):242-51. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    90. Andersen E, Hostmark AT, Anderssen SA. 
+                    Effect of a physical activity intervention on the metabolic syndrome in Pakistani immigrant men: a randomized controlled trial. Journal of immigrant and minority health / Center for Minority Public Health. 2012;14(5):738-46. 
+                  </cite>
+                </p>
+              
+                <p>
+                  <cite style="font-style:inherit">
+                    91. Lunde MS, Hjellset VT, Hostmark AT. 
+                    Slow post meal walking reduces the blood glucose response: an exploratory study in female Pakistani immigrants. Journal of immigrant and minority health / Center for Minority Public Health. 2012;14(5):816-22. 
+                  </cite>
+                </p>
+              
+            </div>
+            
+            <!-- Referanse fra end note -->
+            
+            
+          </div>
+        
+      </div>
+    </div>
+  
+
+  <!-- Informasjon til pasienten -->
+  
+
+              <div class="b-collapsible__footer">
+                <button class="b-collapsible__button b-button b-button--secondary" aria-expanded="false" hidden="" aria-controls="paragraf-fysisk-aktivitet-ved-diabetes-type-2">Lukk</button>
+              </div>
+            
+            
+          </div>
+        </div>
 
   <!-- If Seksjon or Forløpsalternativ -->
 

@@ -9,8 +9,8 @@ const getFragment = url => {
   }
 };
 
-export default function scrollToTitleFromUrlHash() {
-  const url = window.location.href;
+export default function scrollToTitleFromUrlHash(internal) {
+  const url = internal || window.location.href;
   const lastHash = getFragment(url);
   // If there is no hash in url return and do nothing
   if (!lastHash) return false;
@@ -87,7 +87,7 @@ async function waitForIt(selector, retries = 5) {
   try {
     // Find element
     const element = document.querySelector(selector);
-    console.log(selector);
+    
     // Return if element exists
     if (element) {
       return element;
