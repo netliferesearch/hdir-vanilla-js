@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import zenscroll from "zenscroll";
+import { setEqualHeights } from "../utils/setEqualHeights";
 
 // Get fragment from url
 const getFragment = url => {
@@ -45,6 +46,23 @@ const traverseCollapsibles = (el) => {
   return elements;
 };
 
+// When we have columns (pakkeforløp), the meta column is absolutely positioned. So we
+// have to make sure the meta columns isn't longer than the content column. If so, make
+// them equal.
+const adjustHeight = (el) => {
+  setTimeout(() => {
+    const mainDiv = el.parentNode;
+    const hasColumns = mainDiv.classList.contains('b-collapsible--columns');
+    const mainHeight = mainDiv.clientHeight;
+    const metaDiv = el.parentNode.querySelectorAll('.b-collapsible__meta-content')[0];
+    const metaHeight = metaDiv.scrollHeight;
+    if (hasColumns && metaHeight > mainHeight) {
+      el.style.height = metaHeight - 150 + 'px';
+    }
+    console.log('mainHeight', mainHeight, metaHeight);
+  }, 10);
+};
+
 const handleTarget = (el) => {
   if (!el) {
     return;
@@ -67,6 +85,8 @@ const handleTarget = (el) => {
   // Also, checking if the current button (trigger) is already opened by default. If so, skip.
   // traverseCollapsibles(el).reverse().forEach(collapsible => console.log('click ', collapsible));
   traverseCollapsibles(el).reverse().forEach(collapsible => collapsible.click());
+
+  setEqualHeights(el);
   
   // Scroll to element
   const heading = getHeading(el.id)[0];
@@ -87,7 +107,7 @@ async function waitForIt(selector, retries = 5) {
   try {
     // Find element
     const element = document.querySelector(selector);
-    
+
     // Return if element exists
     if (element) {
       return element;

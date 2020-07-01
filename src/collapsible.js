@@ -1,4 +1,5 @@
 import zenscroll from "zenscroll";
+import { setEqualHeights } from "../utils/setEqualHeights";
 
 function hideElement(el) {
   el.setAttribute("hidden", "");
@@ -83,7 +84,19 @@ function findWrapper(child) {
   }
 }
 
-const getHeading = (targetID) => document.querySelectorAll(`.b-collapsible__button[aria-controls="${targetID}"]`);
+const adjustHeight = (el) => {
+  setTimeout(() => {
+    const mainDiv = el.parentNode;
+    const hasColumns = mainDiv.classList.contains('b-collapsible--columns');
+    const mainHeight = mainDiv.clientHeight;
+    const metaDiv = el.parentNode.querySelectorAll('.b-collapsible__meta-content')[0];
+    const metaHeight = metaDiv.scrollHeight;
+    if (hasColumns && metaHeight > mainHeight) {
+      el.style.height = metaHeight - 150 + 'px';
+    }
+    console.log('mainHeight', mainHeight, metaHeight);
+  }, 10);
+};
 
 function toggleContent(content, expanded, el) {
   if (!content) {
@@ -95,6 +108,7 @@ function toggleContent(content, expanded, el) {
   } else {
     content.removeAttribute("hidden");
     content.removeAttribute("aria-hidden");
+    setEqualHeights(content);
   }
   // Animates the scroll to the element, making sure the top of the expanding area is in the window view
   if (!expanded) {
