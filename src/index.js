@@ -8,6 +8,7 @@ import { makeListExpandable } from "./expandableList";
 import { generateToggleContent } from "./toggleContent";
 import { requestFullscreen, exitFullscreen } from "./fullscreen";
 import scrollToTitleFromUrlHash from './scrollToTitleFromUrlHash.js';
+import { setEqualHeights } from "../utils/setEqualHeights";
 
 // Collapsible
 const collapsableElements = [
@@ -15,6 +16,7 @@ const collapsableElements = [
 ];
 collapsableElements.forEach(item => {
   item.addEventListener("click", collapsible, false);
+  setEqualHeights(item);
 });
 
 // Looks at the url hash and collapse the collapsable with a match

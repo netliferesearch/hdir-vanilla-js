@@ -8,14 +8,14 @@ export const setEqualHeights = (el) => {
     if (window.innerWidth < 900) {
       return;
     }
-
     const mainDiv = el.parentNode;
     const hasColumns = mainDiv.classList.contains('b-collapsible--columns');
     const mainHeight = mainDiv.clientHeight;
+    const contentDiv = el.parentNode.querySelectorAll('.b-collapsible__content')[0];
     const metaDiv = el.parentNode.querySelectorAll('.b-collapsible__meta-content')[0];
-    const metaHeight = metaDiv.scrollHeight;
+    const metaHeight = metaDiv ? metaDiv.scrollHeight : null;
     if (hasColumns && metaHeight > mainHeight) {
-      el.style.height = metaHeight - 150 + 'px';
+      contentDiv.style.minHeight = metaHeight - 150 + 'px';
     }
-  }, 10);
+  }, 100);
 };
