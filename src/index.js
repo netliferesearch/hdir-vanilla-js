@@ -27,6 +27,22 @@ if (collapsableElements.length) {
   }, 50);
 }
 
+// Skip link function
+const skipLink = document.getElementById("skip");
+if (skipLink) {
+  skipLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = skipLink.href.split('#')[1];
+    const targetElement = document.getElementById(target);
+    targetElement.scrollIntoView();
+    const nextLinkElement = targetElement.querySelectorAll('a');
+    if (nextLinkElement) {
+      nextLinkElement[0].focus();
+
+    }
+  });
+}
+
 const searchParams = new URLSearchParams(window.location.search);
 // Search filter params
 if (document.querySelector("#filterToggler")) {
