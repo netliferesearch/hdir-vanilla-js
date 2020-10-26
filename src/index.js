@@ -146,4 +146,15 @@ const toggleDefinition = (item) => {
 
   item.classList.toggle('active');
   target.classList.toggle('active');
+};// Toggle content footer
+const toggleContentFooter = btn => {
+  const content = document.getElementById(btn.dataset.target);
+  btn.classList.toggle("b-content-footer__btn--active");
+  content.classList.toggle("b-content-footer__text--active");
 };
+const contentFooterTriggers = [
+  ...document.querySelectorAll(".b-content-footer__btn")
+];
+contentFooterTriggers.forEach(btn => {
+  btn.addEventListener("click", e => toggleContentFooter(btn));
+});
