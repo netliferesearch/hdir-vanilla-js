@@ -150,6 +150,9 @@ const toggleDefinition = (item) => {
 const toggleContentFooter = btn => {
   const content = document.getElementById(btn.dataset.target);
   btn.classList.toggle("b-content-footer__btn--active");
+  var ariaState =
+    btn.getAttribute("aria-expanded") === "true" ? "false" : "true";
+  btn.setAttribute("aria-expanded", ariaState);
   content.classList.toggle("b-content-footer__text--active");
 };
 const contentFooterTriggers = [
