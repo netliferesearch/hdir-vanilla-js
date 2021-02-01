@@ -10,6 +10,7 @@ module.exports = {
     path: Path.join(__dirname, "../build"),
     filename: "hdir-vanilla.js"
   },
+  devtool: "source-map",
   plugins: [
     new CleanWebpackPlugin(["build"], { root: Path.resolve(__dirname, "..") }),
     new CopyWebpackPlugin([

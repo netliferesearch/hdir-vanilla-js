@@ -130,7 +130,13 @@ const toggleProfessionPicker = () => {
   }
 };
 
-generateToggleContent();
+// Toggle content button
+const toggleElements = [
+  ...document.querySelectorAll(".b-toggle-content")
+];
+toggleElements.forEach(el => {
+  generateToggleContent(el);
+});
 
 
 // Definitions
@@ -147,3 +153,34 @@ const toggleDefinition = (item) => {
   item.classList.toggle('active');
   target.classList.toggle('active');
 };
+
+// Collapsible tag toggle
+const tagToggles = [
+  ...document.querySelectorAll(".b-collapsible__tag")
+];
+tagToggles.forEach(item => {
+  item.addEventListener("click", e => toggleTag(item));
+});
+
+const toggleTag = (item) => {
+  const target = item.parentNode.querySelectorAll('.b-collapsible__tag-content')[0];
+  item.classList.toggle('show');
+  target.classList.toggle('show');
+};
+
+// Timeline dots classes
+const timelines = [
+  ...document.querySelectorAll(".b-timeline")
+];
+timelines.forEach(item => {
+    const nr = item.querySelectorAll('.b-timeline__list')[0].childElementCount;
+    if (nr === 4) {
+      item.classList.add('b-timeline--four');
+    }
+    if (nr === 5) {
+      item.classList.add('b-timeline--five');
+    }
+    if (nr === 6) {
+      item.classList.add('b-timeline--six');
+    }
+});

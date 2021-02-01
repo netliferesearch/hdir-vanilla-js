@@ -1,20 +1,27 @@
-export const generateToggleContent = () => {
-  const wrapper = document.querySelector('.b-toggle-content');
-  const textContent = document.querySelector('.b-toggle-content__text');
+export const generateToggleContent = (el) => {
+  const wrapper = el;
+  const textContent = el.querySelector('.b-toggle-content__text');
   const textLength = textContent ? textContent.innerText.replace(/(<([^>]+)>)/ig, "") : '';
+  const articleWrapper = el.parentNode.classList.contains('l-article');
+  console.log('articleWrapper', articleWrapper);
 
-  // Use toggle mode when over 500 chars
-  console.log(textLength.length);
-  if (wrapper && textContent && textLength.length > 500) {
+  // Not intro text, set char limit to 250
+  if (!articleWrapper && wrapper && textContent && textLength.length > 250) {
     wrapper.classList.add('toggle-mode');
   }
 
-  // When there is no content, show all the text
+  // Article intro, set char limit to 500
+  if (articleWrapper && wrapper && textContent && textLength.length > 500) {
+    wrapper.classList.add('toggle-mode');
+  }
+
+
+  // When there is no other content in the article, show all the text
   // (we specify what type of content to avoid false positives)
-  const articleWrapper = document.querySelector('.l-article');
   if (articleWrapper) {
-    const recommendations = Array.apply(null, articleWrapper.querySelectorAll('.b-collapsible'));
-    const chapterHeadings = Array.apply(null, articleWrapper.querySelectorAll('.b-chapter-heading--link'));
+    const article = document.querySelector('.l-article');
+    const recommendations = Array.apply(null, article.querySelectorAll('.b-collapsible'));
+    const chapterHeadings = Array.apply(null, article.querySelectorAll('.b-chapter-heading--link'));
     const items = recommendations.concat(chapterHeadings);
 
     if (items.length === 0) {
