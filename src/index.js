@@ -184,3 +184,18 @@ timelines.forEach(item => {
       item.classList.add('b-timeline--six');
     }
 });
+};// Toggle content footer
+const toggleContentFooter = btn => {
+  const content = document.getElementById(btn.dataset.target);
+  btn.classList.toggle("b-content-footer__btn--active");
+  var ariaState =
+    btn.getAttribute("aria-expanded") === "true" ? "false" : "true";
+  btn.setAttribute("aria-expanded", ariaState);
+  content.classList.toggle("b-content-footer__text--active");
+};
+const contentFooterTriggers = [
+  ...document.querySelectorAll(".b-content-footer__btn")
+];
+contentFooterTriggers.forEach(btn => {
+  btn.addEventListener("click", e => toggleContentFooter(btn));
+});
