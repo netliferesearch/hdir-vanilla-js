@@ -26,6 +26,7 @@ export default function scrollToTitleFromUrlHash(internal) {
 
 // Helpers
 const isCollapsible = (el) => el.classList.contains('b-collapsible__content');
+const isStepCollapsible = (el) => el.parentNode.parentNode.parentNode.hasAttribute("data-step");
 const getCollapsibleTrigger = (el) => el.parentNode.querySelector('button');
 const getHeading = (targetID) => document.querySelectorAll(`.b-collapsible__button[aria-controls="${targetID}"]`);
 
@@ -46,7 +47,8 @@ const traverseCollapsibles = (el) => {
 };
 
 const handleTarget = (el) => {
-  if (!el) {
+  console.log('is step', isStepCollapsible(el), el);
+  if (!el || isStepCollapsible(el)) {
     return;
   }
   const isCollapsbile = isCollapsible(el);

@@ -9,6 +9,7 @@ import { generateToggleContent } from "./toggleContent";
 import { requestFullscreen, exitFullscreen } from "./fullscreen";
 import scrollToTitleFromUrlHash from './scrollToTitleFromUrlHash.js';
 import { setEqualHeights } from "../utils/setEqualHeights";
+import { wizard } from "./wizard";
 
 // Collapsible
 const collapsableElements = [
@@ -184,7 +185,8 @@ timelines.forEach(item => {
       item.classList.add('b-timeline--six');
     }
 });
-};// Toggle content footer
+
+// Toggle content footer
 const toggleContentFooter = btn => {
   const content = document.getElementById(btn.dataset.target);
   btn.classList.toggle("b-content-footer__btn--active");
@@ -199,3 +201,11 @@ const contentFooterTriggers = [
 contentFooterTriggers.forEach(btn => {
   btn.addEventListener("click", e => toggleContentFooter(btn));
 });
+
+// Grants Wizard 
+const steps = [
+  ...document.querySelectorAll("section[data-step]")
+];
+if (steps.length > 0) {
+  wizard(steps);
+}
