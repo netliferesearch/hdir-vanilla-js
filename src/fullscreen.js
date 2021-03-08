@@ -1,12 +1,14 @@
 const requestFullscreen = function (ele) {
   ele.classList.add('videoWrapper__fullscreen');
-  if (ele.requestFullscreen) {
-    ele.requestFullscreen();
-  } else if (ele.webkitRequestFullscreen) {
+  if (!document.fullscreenElement && ele.requestFullscreen) {
+    ele.requestFullscreen().catch(err => {
+      console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+  } else if (!document.fullscreenElement && ele.webkitRequestFullscreen) {
     ele.webkitRequestFullscreen();
-  } else if (ele.mozRequestFullScreen) {
+  } else if (!document.fullscreenElement && ele.mozRequestFullScreen) {
     ele.mozRequestFullScreen();
-  } else if (ele.msRequestFullscreen) {
+  } else if (!document.fullscreenElement && ele.msRequestFullscreen) {
     ele.msRequestFullscreen();
   } else {
     console.log('Fullscreen API is not supported.');
