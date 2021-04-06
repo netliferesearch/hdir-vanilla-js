@@ -10,6 +10,7 @@ import { requestFullscreen, exitFullscreen } from "./fullscreen";
 import scrollToTitleFromUrlHash from './scrollToTitleFromUrlHash.js';
 import { setEqualHeights } from "../utils/setEqualHeights";
 import { wizard } from "./wizard";
+import { browserWarning } from "./browserWarning";
 
 // Collapsible
 const collapsableElements = [
@@ -209,3 +210,6 @@ const steps = [
 if (steps.length > 0) {
   wizard(steps);
 }
+
+// Browser Warning
+browserWarning();
