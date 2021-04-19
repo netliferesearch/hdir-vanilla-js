@@ -26,11 +26,16 @@ export const wizard = (steps) => {
     const totalSteps = steps.length;
     const stepType = step.dataset.stepType;
     const inputType = step.dataset.inputType;
+    const nextStepTrigger = step.querySelector('button[data-next]');
+
+    // Last step, change label on next btn
+    if (step.dataset.step == (totalSteps - 1)) {
+      nextStepTrigger.innerHTML = 'Vis resultater';
+    }
 
     if (inputType === 'dropValue') {
-      const input = step.querySelector('select');
 
-      input.addEventListener("change", function (e) {
+      nextStepTrigger.addEventListener("click", function (e) {
 
         // More steps to come, open next
         if (step.dataset.step < totalSteps - 1) {
@@ -45,9 +50,7 @@ export const wizard = (steps) => {
     }
 
     if (inputType === 'checkValue') {
-      const submit = step.querySelector('button[data-submit]');
-      
-      submit && submit.addEventListener("click", function (e) {
+      nextStepTrigger.addEventListener("click", function (e) {
 
         // More steps to come, open next
         if (step.dataset.step < totalSteps - 1) {
@@ -63,21 +66,17 @@ export const wizard = (steps) => {
     }
 
     if (inputType === 'radioValue') {
-      const radios = step.querySelectorAll('input[type="radio"]');
+      nextStepTrigger.addEventListener("click", function (e) {
 
-      radios.forEach(input => {
-        input.addEventListener("change", function (e) {
+        // More steps to come, open next
+        if (step.dataset.step < totalSteps - 1) {
+          openNext(step);
+        }
 
-          // More steps to come, open next
-          if (step.dataset.step < totalSteps - 1) {
-            openNext(step);
-          }
-
-          // The last step before results, show results
-          if (step.dataset.step == (totalSteps - 1)) {
-            showResults(step);
-          }
-        });
+        // The last step before results, show results
+        if (step.dataset.step == (totalSteps - 1)) {
+          showResults(step);
+        }
       });
 
     }
