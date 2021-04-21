@@ -7,6 +7,8 @@ export const wizard = (steps) => {
     const nextStepTrigger = nextStep.querySelector('button');
     if (!nextStepCollapsible.classList.contains('b-collapsible--active')) {
       nextStepTrigger.click();
+    } else {
+      zenscroll.to(nextStep);
     }
   };
 
